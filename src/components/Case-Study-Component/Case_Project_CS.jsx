@@ -1,26 +1,38 @@
 import "../../../src/style/Style.css";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
-import case1 from "../../assets/case-1.png";
-import case2 from "../../assets/case-2.png";
-import case3 from "../../assets/case-3.png";
-import case4 from "../../assets/Case4.png";
-import case5 from "../../assets/Case5.png";
-import case6 from "../../assets/Case6.png";
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
+import { FaArrowRightLong } from "react-icons/fa6";
 
-import { Pagination } from 'antd';
-
-import React, { useRef, useState } from "react";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import { RxBorderSolid } from "react-icons/rx";
-import { FaLongArrowAltRight } from "react-icons/fa";
 const Case_Project_CS = () => {
+  const [cards, setCards] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 6; 
+
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setCards(data);
+      });
+  }, []);
+
+  // Calculate the range of cards to display for the current page
+  const indexOfLastCard = currentPage * cardsPerPage; // 6 * 1 = 6
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage; // 6 - 6 = 0
+  const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
+
+  // Calculate total number of pages
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+  // Handler to change page
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className="min-h-fit work-sans text-black">
       <div className="max-w-[1320px] mx-auto w-full xl:pt-[100px] xl:pb-[75px] md:py-16 py-[29px] xl:px-5 md:px-7 smaller:px-8 small:px-4">
         <div className="lg:space-y-4 eb-garamond text-center sm:text-start">
-          
           <h1 className="lg:text-5xl md:text-3xl text-2xl font-medium md:leading-[62px] leading-[47px]">
             Our Recent Case Project.
           </h1>
@@ -33,137 +45,38 @@ const Case_Project_CS = () => {
         </div>
 
         <div className="md:mt-14 mt-[28px] work-sans">
+          {/* Cards */}
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-            {/* 1 */}
-            <div className="max-w-[424px] max-h-[528px] mx-auto bg-white flex flex-col items-center text-black gap-3 rounded-[10px] border lg:pb-[30px] md:pb-[19px] pb-[17px]">
-              <div className="">
-                <img src={case1} alt="" />
-              </div>
-              <div className="lg:px-6 px-3 lg:space-y-8 space-y-3 lg:text-start text-center flex flex-col lg:items-start items-center">
-                <p className="font-medium lg:text-lg text-base text-[#242628] lg:leading-[30px] text-ellipsis line-clamp-2">
-                  The Anatomy of a Civil Claim: Case Study and Legal
-                  Implications
-                </p>
-                <p className="h-[70px] lg:text-base text-sm text-[#3A3D3F] lg:leading-7 text-ellipsis line-clamp-3">
-                  An exploration of a civil claim, analyzing its components and
-                  legal implications in depth.
-                </p>
-
-                <button className="hover:bg-[#C7A87D] lg:px-5 px-2 lg:py-3 py-2  rounded-lg font-medium whitespace-nowrap lg:w-[191px] lg:text-lg text-base flex items-center gap-1 text-[#242628] hover:text-white border">
-                  READ MORE <RxBorderSolid className="rotate-90" />{" "}
-                  <FaLongArrowAltRight />
-                </button>
-              </div>
-            </div>
-            {/* 2 */}
-            <div className="max-w-[424px] max-h-[528px] mx-auto bg-white flex flex-col items-center text-black gap-3 rounded-[10px] border lg:pb-[30px] md:pb-[19px] pb-[17px]">
-              <div className="">
-                <img src={case2} alt="" />
-              </div>
-              <div className="lg:px-6 px-3 lg:space-y-8 space-y-3 lg:text-start text-center flex flex-col lg:items-start items-center">
-                <p className="font-medium lg:text-lg text-base text-[#242628] lg:leading-[30px] text-ellipsis line-clamp-2">
-                  Property Disputes Unveiled: A Real Estate Law Case Study
-                </p>
-                <p className="h-[70px]  lg:text-base text-sm text-[#3A3D3F] overflow-hidden text-ellipsis line-clamp-3">
-                  Insights into a key real estate law case and its legal impact.
-                </p>
-
-                <button className="hover:bg-[#C7A87D] lg:px-5 px-2 lg:py-3 py-2  rounded-lg font-medium whitespace-nowrap lg:w-[191px] lg:text-lg text-base flex items-center gap-1 text-[#242628] hover:text-white border">
-                  READ MORE <RxBorderSolid className="rotate-90" />{" "}
-                  <FaLongArrowAltRight />
-                </button>
-              </div>
-            </div>
-            {/* 3 */}
-            <div className="max-w-[424px] max-h-[528px] mx-auto bg-white flex flex-col items-center text-black gap-3 rounded-[10px] border lg:pb-[30px] md:pb-[19px] pb-[17px]">
-              <div className="">
-                <img src={case3} alt="" />
-              </div>
-              <div className="lg:px-6 px-3 lg:space-y-8 space-y-3 lg:text-start text-center flex flex-col lg:items-start items-center">
-                <p className="font-medium lg:text-lg text-base text-[#242628] lg:leading-[30px] text-ellipsis line-clamp-2">
-                  The Complexities of Custody: A Family Law Case Analysis
-                </p>
-                <p className="h-[70px]  lg:text-base text-sm text-[#3A3D3F] text-ellipsis line-clamp-3">
-                  An analysis of a family law case, focusing on legal issues in
-                  custody, divorce, and support.
-                </p>
-
-                <button className="hover:bg-[#C7A87D] lg:px-5 px-2 lg:py-3 py-2  rounded-lg font-medium whitespace-nowrap lg:w-[191px] lg:text-lg text-base flex items-center gap-1 text-[#242628] hover:text-white border">
-                  READ MORE <RxBorderSolid className="rotate-90" />{" "}
-                  <FaLongArrowAltRight />
-                </button>
-              </div>
-            </div>
-            {/* 4 */}
-            <div className="max-w-[424px] max-h-[528px] mx-auto bg-white flex flex-col items-center text-black gap-3 rounded-[10px] border  lg:pb-[30px] md:pb-[19px] pb-[17px]">
-              <div className="">
-                <img src={case4} alt="" />
-              </div>
-              <div className="lg:px-6 px-3 lg:space-y-8 space-y-3 lg:text-start text-center flex flex-col lg:items-start items-center">
-                <p className="font-medium lg:text-lg text-base text-[#242628] lg:leading-[30px] text-ellipsis line-clamp-2">
-                  The Anatomy of a Civil Claim: Case Study and Legal
-                  Implications
-                </p>
-                <p className="h-[70px]  lg:text-base text-sm text-[#3A3D3F] text-ellipsis line-clamp-3">
-                  An exploration of a civil claim, analyzing its components and
-                  legal implications in depth.
-                </p>
-                {/* <div className="flex-grow"></div> */}
-                <button className="hover:bg-[#C7A87D] lg:px-5 px-2 lg:py-3 py-2  rounded-lg font-medium whitespace-nowrap lg:w-[191px] lg:text-lg text-base flex items-center gap-1 text-[#242628] hover:text-white border">
-                  READ MORE <RxBorderSolid className="rotate-90" />{" "}
-                  <FaLongArrowAltRight />
-                </button>
-              </div>
-            </div>
-            {/* 5 */}
-            <div className="max-w-[424px] max-h-[528px] mx-auto bg-white flex flex-col items-center text-black gap-3 rounded-[10px] border  lg:pb-[30px] md:pb-[19px] pb-[17px]">
-              <div className="">
-                <img src={case5} alt="" />
-              </div>
-              <div className="lg:px-6 px-3 lg:space-y-8 space-y-3 lg:text-start text-center flex flex-col lg:items-start items-center">
-                <p className="font-medium lg:text-lg text-base text-[#242628] lg:leading-[30px] text-ellipsis line-clamp-2">
-                  Property Disputes Unveiled: A Real Estate Law Case Study
-                </p>
-                <p className="h-[70px]  lg:text-base text-sm text-[#3A3D3F] text-ellipsis line-clamp-3">
-                  Insights into a key real estate law case and its legal impact.
-                </p>
-
-                <button className="hover:bg-[#C7A87D] lg:px-5 px-2 lg:py-3 py-2  rounded-lg font-medium whitespace-nowrap lg:w-[191px] lg:text-lg text-base flex items-center gap-1 text-[#242628] hover:text-white border">
-                  READ MORE <RxBorderSolid className="rotate-90" />{" "}
-                  <FaLongArrowAltRight />
-                </button>
-              </div>
-            </div>
-            {/* 6 */}
-            <div className="max-w-[424px] max-h-[528px] mx-auto bg-white flex flex-col items-center text-black gap-3 rounded-[10px] border lg:pb-[30px] md:pb-[19px] pb-[17px]">
-              <div className="">
-                <img src={case6} alt="" />
-              </div>
-              <div className="lg:px-6 px-3 lg:space-y-8 space-y-3 lg:text-start text-center flex flex-col lg:items-start items-center">
-                <p className="font-medium lg:text-lg text-base text-[#242628] lg:leading-[30px] text-ellipsis line-clamp-2">
-                  The Complexities of Custody: A Family Law Case Analysis
-                </p>
-                <p className="h-[70px]  lg:text-base text-sm text-[#3A3D3F] text-ellipsis line-clamp-3">
-                  An analysis of a family law case, focusing on legal issues in
-                  custody, divorce, and support.
-                </p>
-
-                <button className="hover:bg-[#C7A87D] lg:px-5 px-2 lg:py-3 py-2  rounded-lg font-medium whitespace-nowrap lg:w-[191px] lg:text-lg text-base flex items-center gap-1 text-[#242628] hover:text-white border">
-                  READ MORE <RxBorderSolid className="rotate-90" />{" "}
-                  <FaLongArrowAltRight />
-                </button>
-              </div>
-            </div>
+            {currentCards.map((card, idx) => (
+              <Card key={idx} card={card}></Card>
+            ))}
           </div>
-          {/* pagination */}
-          <div className="flex justify-center mt-[50px]">
-          <Pagination defaultCurrent={1} total={30}></Pagination>
+
+          {/* Pagination */}
+          <div className="flex justify-center mt-[50px] space-x-2 items-center gap-2">
+            {
+              Array.from({ length: totalPages }, (_, idx) => (
+               <button
+                key={idx + 1}
+                onClick={() => handlePageChange(idx + 1)}
+                className={`px-4 py-2 rounded-full font-semibold text-lg h-10 w-10 ${
+                  currentPage === idx + 1
+                    ? "bg-[#C7A87D] text-white"
+                    : "bg-white text-black"
+                }`}
+              >
+              {idx + 1}
+              </button>
+            ))}
+
+             <FaArrowRightLong className="h-6 w-6"/>
+
           </div>
         </div>
-        
       </div>
     </div>
   );
 };
 
 export default Case_Project_CS;
+
