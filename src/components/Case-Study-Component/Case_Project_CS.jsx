@@ -17,7 +17,7 @@ const Case_Project_CS = () => {
   }, []);
 
   // Calculate the range of cards to display for the current page
-  const indexOfLastCard = currentPage * cardsPerPage; // 6 * 1 = 6
+  const indexOfLastCard = currentPage * cardsPerPage; // 1 * 6 = 6
   const indexOfFirstCard = indexOfLastCard - cardsPerPage; // 6 - 6 = 0
   const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
 
@@ -47,7 +47,8 @@ const Case_Project_CS = () => {
         <div className="md:mt-14 mt-[28px] work-sans">
           {/* Cards */}
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-            {currentCards.map((card, idx) => (
+            {
+            currentCards.map((card, idx) => (
               <Card key={idx} card={card}></Card>
             ))}
           </div>

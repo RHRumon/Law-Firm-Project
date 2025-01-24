@@ -7,7 +7,7 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const Contact_CS = () => {
     return (
-        <div className="max-w-[1320px] mx-auto w-full lg:pt-[75px] lg:pb-[180px] md:py-[64px] py-[27px] xl:px-5 md:px-7 smaller:px-8 small:px-4 work-sans ">
+        <div className="max-w-[1320px] mx-auto w-full lg:pt-[75px] lg:pb-[180px] md:py-[62px] py-[29px] xl:px-5 md:px-7 smaller:px-8 small:px-4 work-sans ">
               <div className="relative min-h-[738px] rounded-[20px]">
                 
                 <div

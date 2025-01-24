@@ -160,14 +160,18 @@ const Navbar2 = () => {
                     </li>
                   </Link>
                 </div>
-                <li
-                  onClick={() => handleClick("Case Study")}
-                  className={`hover:text-[#B68C5A] ${
-                    categorySelect === "Case Study" ? "text-[#B68C5A]" : ""
-                  }`}
-                >
-                  Case Study
-                </li>
+                <div>
+                  <Link to={`/caseStudy`}>
+                    <li
+                      onClick={() => handleClick("Case Study")}
+                      className={`hover:text-[#B68C5A] ${
+                        categorySelect === "Case Study" ? "text-[#B68C5A]" : ""
+                      }`}
+                    >
+                      Case Study
+                    </li>
+                  </Link>
+                </div>
                 <li
                   onClick={() => handleClick("Contact Us")}
                   className={`hover:text-[#B68C5A] ${

@@ -8,7 +8,7 @@ import company5 from "../../assets/Company logo (5).png";
 
 const TrustedService = () => {
     return (
-        <div className="max-w-[1320px] mx-auto w-full py-[60px] work-sans  eb-garamond">
+        <div className="max-w-[1320px] mx-auto w-full md:pt-0 pt-[60px] pb-[60px] work-sans  eb-garamond">
               <div className="flex justify-center">
                 <div className="md:w-[326px] w-[277px]">
                   <p className="font-semibold md:text-2xl text-[20px] text-[#242628] border-b-2 border-b-[#B68C5A] h-11">

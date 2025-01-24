@@ -8,7 +8,7 @@ import company5 from "../../assets/Company logo (5).png";
 
 const TrustedCS = () => {
   return (
-    <div className="max-w-[1320px] mx-auto w-full py-[75px] work-sans  eb-garamond">
+    <div className="max-w-[1320px] mx-auto w-full xl:py-[75px] md:py-[62px] py-[29px] work-sans  eb-garamond">
       <div className="flex justify-center">
         <div className="md:w-[326px] w-[277px]">
           <p className="font-semibold md:text-2xl text-[20px] text-[#242628] border-b-2 border-b-[#B68C5A] h-11">
