@@ -13,6 +13,7 @@ import About_Route from './components/About-Page-Routes/About_Route.jsx';
 import Service_Route from './components/Service-Page-Route/Service_Route.jsx';
 import Service_Details_Route from './components/Service-Details-Route/Service_Details_Route.jsx';
 import Case_Study_Route from './components/Case-Study-Component/Case_Study_Route.jsx';
+import Case_Study2_Route from './components/Case-Study-2-Components/Case_Study2_Route.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path:"/caseStudy",
         element:<Case_Study_Route></Case_Study_Route>
+      },
+      {
+        path: "/caseDetails",
+        element:<Case_Study2_Route></Case_Study2_Route>
       }
     ],
   },
