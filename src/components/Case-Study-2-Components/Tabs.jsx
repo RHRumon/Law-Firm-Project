@@ -104,7 +104,7 @@ const Tabs = () => {
             className={`tab-btn ${
               activeTab === tab
                 ? "bg-[#B68C5A] text-white"
-                : "bg-white text-black"
+                : "bg-white text-black border"
             }`}
           >
             {tab}

@@ -1,8 +1,8 @@
-import BannerService from "../Service-Components/bannerService";
-import ContactService from "../Service-Components/ContactService";
-import JusticeService from "../Service-Components/JusticeService";
-import PracticeService from "../Service-Components/PracticeService";
-import TrustedService from "../Service-Components/TrustedService";
+import BannerService from "./bannerService";
+import ContactService from "./ContactService";
+import JusticeService from "./JusticeService";
+import PracticeService from "./PracticeService";
+import TrustedService from "./TrustedService";
 
 const Service_Route = () => {
     return (
