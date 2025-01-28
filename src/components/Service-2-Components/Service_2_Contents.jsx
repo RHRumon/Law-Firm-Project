@@ -24,7 +24,7 @@ const Service_2_Contents = () => {
         <img src={serviceDetailsImage} alt="" />
 
         <div className="md:mt-[56px] mt-[28px] lg:mb-14">
-          <h1 className="lg:text-5xl md:text-[32px] text-[25px] font-medium text-[#242628] lg:leading-[62px] md:mb-6">
+          <h1 className="header-1">
             Law Family
           </h1>
           <p className="text-base md:leading-[27px] text-[#3A3D3F] work-sans">

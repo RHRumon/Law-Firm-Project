@@ -1,0 +1,94 @@
+[
+    {
+      "main_description": "The primary issue lies in the complexities and challenges surrounding civil claims in the legal system. Civil litigation, as a means to resolve non-criminal disputes, often faces criticism for being inaccessible, time-consuming, and expensive. This has led to significant barriers to justice, particularly for individuals and small entities who lack the resources to navigate the legal process effectively.",
+      "problem": [
+        {
+          "number": 1,
+          "title": "Facilitate Better Decision-Making",
+          "description": "The statement attempts to cover too many areas (framework, procedures, types, barriers, policy implications), which might dilute the focus of the study. Narrowing the scope to a specific aspect, such as the effectiveness of civil claim processes or the challenges in accessing justice, could make the study more impactful and manageable."
+        },
+        {
+          "number": 2,
+          "title": "Repetition",
+          "description": "Some points are overlapping. For instance, 'framework and procedures' in the opening sentence is revisited multiple times without adding much differentiation. Streamlining these ideas could make the statement more concise."
+        },
+        {
+          "number": 3,
+          "title": "Absence of Target Audience",
+          "description": "The purpose does not clearly identify who the study is intended to help. Is it primarily for legal professionals, policymakers, litigants, or academia? Explicitly stating this would clarify the study’s intent and relevance."
+        }
+      ]
+    },
+    {
+      "main_description": "The primary issue lies in the complexities and challenges surrounding civil claims in the legal system. Civil litigation, as a means to resolve non-criminal disputes, often faces criticism for being inaccessible, time-consuming, and expensive. This has led to significant barriers to justice, particularly for individuals and small entities who lack the resources to navigate the legal process effectively.",
+      "challenges": [
+        {
+          "number": 1,
+          "title": "Facilitate Better Decision-Making",
+          "description": "The statement attempts to cover too many areas (framework, procedures, types, barriers, policy implications), which might dilute the focus of the study. Narrowing the scope to a specific aspect, such as the effectiveness of civil claim processes or the challenges in accessing justice, could make the study more impactful and manageable."
+        },
+        {
+          "number": 2,
+          "title": "Repetition",
+          "description": "Some points are overlapping. For instance, 'framework and procedures' in the opening sentence is revisited multiple times without adding much differentiation. Streamlining these ideas could make the statement more concise."
+        },
+        {
+          "number": 3,
+          "title": "Absence of Target Audience",
+          "description": "The purpose does not clearly identify who the study is intended to help. Is it primarily for legal professionals, policymakers, litigants, or academia? Explicitly stating this would clarify the study’s intent and relevance."
+        }
+      ]
+    },
+    {
+      "main_description": "The primary purpose of this study is to explore the framework, procedures, and implications of civil claims in the legal system. By examining the nuances of civil litigation, this study seeks to provide a comprehensive understanding of how individuals and entities resolve disputes in a non-criminal context.",
+      "solved": [
+        {
+          "number": 1,
+          "title": "Simplification of Legal Frameworks:",
+          "description": "Develop standardized, user-friendly procedural guidelines to reduce complexity for litigants.",
+          "description1": "Introduce technology-driven platforms that provide clear instructions, templates, and automated support for filing claims."
+          
+        },
+        {
+          "number": 2,
+          "title": "Reduction of Litigation Costs:",
+          "description": "Encourage the adoption of cost-capping measures in civil cases to make litigation more affordable.",
+          "description1": "Promote free or subsidized legal aid programs for low-income litigants.",
+          "description2": "Leverage online dispute resolution (ODR) systems to minimize costs associated with physical appearances in court."
+        },
+        {
+          "number": 3,
+          "title": "Addressing Delays in Resolution:",
+          "description": "Implement case management systems that prioritize efficient scheduling and tracking of cases.",
+          "description1": "Increase judicial resources, including personnel and infrastructure, to address court backlogs.",
+          "description2": "Encourage ADR methods like mediation and arbitration for quicker resolutions."
+        }
+      ]
+    },
+    {
+      "main_description": "The primary purpose of this study is to explore the framework, procedures, and implications of civil claims in the legal system. By examining the nuances of civil litigation, this study seeks to provide a comprehensive understanding of how individuals and entities resolve disputes in a non-criminal context.",
+      "solved_result": [
+        {
+          "number": 1,
+          "title": "Solution: Complex Legal Framework",
+          "description": "Develop standardized, user-friendly procedural guidelines to simplify processes.",
+          "description1": "Introduce digital platforms with step-by-step guides and automated support for filing claims."
+        },
+        {
+          "number": 2,
+          "title": "Solution:  High Cost of Litigation",
+          "description": "This is a description of the second solved result.",
+          "description1": "Encourage the adoption of cost-capping measures in litigation.",
+          "description2": "Leverage online dispute resolution (ODR) systems to reduce costs."
+        },
+        {
+          "number": 3,
+          "title": "Solution: Limited Access to Justice",
+          "description": "Expand community-based legal assistance programs.",
+          "description1": "Offer virtual legal consultations to reach remote areas.",
+          "description2": "Provide multilingual resources to ensure accessibility for diverse populations."
+        }
+      ]
+    }
+  ]
+  

@@ -5,7 +5,7 @@ const BannerCaseStudy2 = () => {
   return (
     <div
       style={{ backgroundImage: `url(${about_hero_bg})` }}
-      className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white bg-cover bg-center bg-no-repeat md:h-[480px] h-[250px] flex items-center justify-center"
+      className="bg-gradient-to-r from-[#0C0C15] to-[#3F4069] min-h-fit work-sans text-white bg-cover bg-center bg-no-repeat md:h-[480px] h-[250px] flex items-center justify-center xl:mb-[150px] md:mb-14 mb-[29px]"
     >
       <div className="max-w-[1320px] mx-auto w-full text-center">
         <h1 className="lg:text-5xl md:text-4xl text-[30px] font-semibold eb-garamond md:mt-0 mt-[37px]">

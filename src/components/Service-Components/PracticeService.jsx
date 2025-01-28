@@ -1,15 +1,4 @@
 import "../../../src/style/Style.css";
-import hammer from "../../assets/hammer.png";
-import daripalla from "../../assets/daripalla.png";
-import house from "../../assets/house.png";
-import practiceCivil from "../../assets/Practicecivil.png";
-import practiceEmployee from "../../assets/Practiceemployee.png";
-import practiceEducation from "../../assets/Practiceeducation.png";
-import practiceCorporate from "../../assets/Practicecorporate.png";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
-import practiceDesign from "../../assets/practiceDesign.png";
-import practiceStyle from "../../assets/practice-design.png";
-import practiceStyleWhite from "../../assets/practiceStyleWhite.png";
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Card_Service from "./Card_Service";
@@ -37,7 +26,7 @@ const PracticeService = () => {
         <div className="lg:space-y-4 eb-garamond">
           <p className="text-xl font-medium text-[#D4AF37]">Service</p>
 
-          <h1 className="lg:text-5xl md:text-3xl text-2xl font-medium lg:leading-[62px] md:leading-[47px]">
+          <h1 className="header-1">
             Our Practice Area
           </h1>
 

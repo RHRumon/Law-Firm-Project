@@ -23,7 +23,7 @@ const JusticeService = () => {
    
            <div className="lg:space-y-4 eb-garamond text-center">
              <p className="text-xl font-medium text-[#D4AF37]">Team</p>
-             <h1 className="lg:text-5xl md:text-3xl text-2xl font-medium lg:leading-[62px] md:leading-[47px]">
+             <h1 className="header-1">
                The Face Of Justice
              </h1>
              <p className="text-base lato leading-[25px] ">

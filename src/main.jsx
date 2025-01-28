@@ -8,8 +8,8 @@ import {
 import Root from './components/Root/Root.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Home-Routes/Home.jsx';
-import About from './components/About-Page-Routes/About_Route.jsx';
-import About_Route from './components/About-Page-Routes/About_Route.jsx';
+// import About from './components/About-Components/About_Route.jsx';
+import About_Route from './components/About-Components/About_Route.jsx';
 import Service_Route from './components/Service-Page-Route/Service_Route.jsx';
 import Service_Details_Route from './components/Service-Details-Route/Service_Details_Route.jsx';
 import Case_Study_Route from './components/Case-Study-Component/Case_Study_Route.jsx';

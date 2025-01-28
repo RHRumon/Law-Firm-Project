@@ -6,7 +6,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Case_Project_CS = () => {
   const [cards, setCards] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 6; 
+  const cardsPerPage = 6;
 
   useEffect(() => {
     fetch("data.json")
@@ -32,10 +32,8 @@ const Case_Project_CS = () => {
   return (
     <div className="min-h-fit work-sans text-black">
       <div className="max-w-[1320px] mx-auto w-full xl:pt-[100px] xl:pb-[75px] md:py-16 py-[29px] xl:px-5 md:px-7 smaller:px-8 small:px-4">
-        <div className="lg:space-y-4 eb-garamond text-center sm:text-start">
-          <h1 className="lg:text-5xl md:text-3xl text-2xl font-medium md:leading-[62px] leading-[47px]">
-            Our Recent Case Project.
-          </h1>
+        <div className=" eb-garamond text-center sm:text-start">
+          <h1 className="header-1">Our Recent Case Project.</h1>
           <p className="text-base">
             Learn how we achieve results through expertise, dedication, and
             tailored
@@ -44,20 +42,18 @@ const Case_Project_CS = () => {
           </p>
         </div>
 
-        <div className="md:mt-14 mt-[28px] work-sans">
+        <div className="lg:mt-[40px] mt-[28px] work-sans">
           {/* Cards */}
           <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-            {
-            currentCards.map((card, idx) => (
+            {currentCards.map((card, idx) => (
               <Card key={idx} card={card}></Card>
             ))}
           </div>
 
           {/* Pagination */}
           <div className="flex justify-center mt-[50px] space-x-2 items-center gap-2">
-            {
-              Array.from({ length: totalPages }, (_, idx) => (
-               <button
+            {Array.from({ length: totalPages }, (_, idx) => (
+              <button
                 key={idx + 1}
                 onClick={() => handlePageChange(idx + 1)}
                 className={`px-4 py-2 rounded-full font-semibold text-lg h-10 w-10 ${
@@ -66,12 +62,11 @@ const Case_Project_CS = () => {
                     : "bg-white text-black"
                 }`}
               >
-              {idx + 1}
+                {idx + 1}
               </button>
             ))}
 
-             <FaArrowRightLong className="h-6 w-6"/>
-
+            <FaArrowRightLong className="h-6 w-6" />
           </div>
         </div>
       </div>
@@ -80,4 +75,3 @@ const Case_Project_CS = () => {
 };
 
 export default Case_Project_CS;
-

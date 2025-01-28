@@ -76,7 +76,7 @@ const AboutUsAB = () => {
               <p className="md:text-xl text-lg font-medium text-[#D4AF37]">
                 About Us
               </p>
-              <h1 className="md:my-6 my-1 xl:text-5xl lg:text-4xl md:text-3xl text-[25px] md:font-medium xl:leading-[57px] lg:leading-[47px] leading-[30px]">
+              <h1 className="header-1">
                 We fight for fairness and stand <br />
                 against <span className="text-[#D4AF37]">injustice</span>.
               </h1>
