@@ -33,7 +33,7 @@ const Case_Project_CS = () => {
     <div className="min-h-fit work-sans text-black">
       <div className="max-w-[1320px] mx-auto w-full xl:pt-[100px] xl:pb-[75px] md:py-16 py-[29px] xl:px-5 md:px-7 smaller:px-8 small:px-4">
         <div className=" eb-garamond text-center sm:text-start">
-          <h1 className="header-1">Our Recent Case Project.</h1>
+          <h1 className="header-1 mb-[10px]">Our Recent Case Project.</h1>
           <p className="text-base">
             Learn how we achieve results through expertise, dedication, and
             tailored

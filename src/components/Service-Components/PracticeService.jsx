@@ -26,7 +26,7 @@ const PracticeService = () => {
         <div className="lg:space-y-4 eb-garamond">
           <p className="text-xl font-medium text-[#D4AF37]">Service</p>
 
-          <h1 className="header-1">
+          <h1 className="header-1 mb-[10px]">
             Our Practice Area
           </h1>
 

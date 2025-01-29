@@ -23,7 +23,7 @@ const JusticeAB = () => {
     
             <div className="lg:space-y-4 eb-garamond text-center">
               <p className="text-xl font-medium text-[#D4AF37]">Team</p>
-              <h1 className="header-1">
+              <h1 className="header-1 mb-[10px]">
                 The Face Of Justice
               </h1>
               <p className="text-base lato leading-[25px] ">

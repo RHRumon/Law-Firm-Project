@@ -34,7 +34,7 @@ const ALina_Gain = () => {
 
           {/* text container */}
           <div className="eb-garamond w-full xl:w-3/5 flex flex-col justify-center  py-5 order-1">
-            <h1 className="header-1 ">Alina Gain</h1>
+            <h1 className="header-1 mb-[10px]">Alina Gain</h1>
             <p className="font-medium text-lg ">Senior lawyer</p>
             <p className="text-[#3A3D3F] text-base font-normal md:leading-[27px] leading-[23px] md:mb-[28px] mb-[10px]">
               Alina Gain is a skilled attorney committed to providing expert
@@ -93,9 +93,7 @@ const ALina_Gain = () => {
         </div>
 
         <div className="mt-[56px]">
-          <h1 className="sm:text-[32px] text-[28px] font-medium text-[#242628] lg:leading-[41px] mb-6 eb-garamond">
-            Professional Experience:
-          </h1>
+          <h1 className="semi-header mb-6">Professional Experience:</h1>
           <p className="leading-[28px] text-[#3A3D3F]">
             Alina Gain is a seasoned attorney with extensive experience in
             handling diverse legal cases, including [specific areas of law].
@@ -109,9 +107,7 @@ const ALina_Gain = () => {
           </p>
         </div>
         <div className="mt-[40px]">
-          <h1 className="sm:text-[32px] text-[28px] font-medium text-[#242628] lg:leading-[41px] mb-6 eb-garamond">
-            Practice Areas:
-          </h1>
+          <h1 className="semi-header mb-6">Practice Areas:</h1>
           <p className="leading-[28px] text-[#3A3D3F]">
             Alina Gain offers expert legal services in the following areas:
           </p>
@@ -126,10 +122,44 @@ const ALina_Gain = () => {
               ))}
             </div>
             <div className="flex justify-center xl:mt-0 mt-10">
-                <img className="xl:w-[424px] xl:h-[593px] md:w-[470px] md:h-[540px]" src={Alina2} alt="" />
+              <img
+                className="xl:w-[424px] xl:h-[593px] md:w-[470px] md:h-[540px]"
+                src={Alina2}
+                alt=""
+              />
             </div>
           </div>
         </div>
+        <div className="mt-[40px]">
+          <div>
+            <h1 className="semi-header mb-6">Legal Experience: </h1>
+            <h2 className="font-medium text-xl leading-[23px] mb-4">
+              Practice Area:
+            </h2>
+            <p className="text-[#3A3D3F]">
+              Alina Gain is an experienced attorney dedicated to delivering
+              expert legal solutions with integrity and precision. Specializing
+              in [specific area(s) of law], she provides personalized
+              representation and unwavering support to her clients, ensuring
+              their rights are protected and justice is served.
+            </p>
+          </div>
+          
+          <div className="mt-6">
+            <h1 className="semi-header mb-6">Legal Experience: </h1>
+            <h2 className="font-medium text-xl leading-[23px] mb-4">
+              Practice Area:
+            </h2>
+            <p className="text-[#3A3D3F]">
+              Alina Gain is an experienced attorney dedicated to delivering
+              expert legal solutions with integrity and precision. Specializing
+              in [specific area(s) of law], she provides personalized
+              representation and unwavering support to her clients, ensuring
+              their rights are protected and justice is served.
+            </p>
+          </div>
+        </div>
+        
       </div>
     </div>
   );

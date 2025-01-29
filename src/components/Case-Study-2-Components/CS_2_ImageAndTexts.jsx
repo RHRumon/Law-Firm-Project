@@ -20,8 +20,8 @@ const CS_2_ImageAndTexts = () => {
         {/* xl:mb-[150px] md:mb-14 mb-[29px] */}
         <img src={caseStudy2Image} alt="" />
 
-        <div className="md:mt-[56px] mt-[28px] lg:mb-14">
-          <h1 className="header-1-banner">
+        <div className="md:mt-[56px] mt-[28px] md:mb-14 lg:mb-[56px] ">
+          <h1 className="header-1-banner mb-[10px] md:mb-[1.5rem] lg:mb-[56px]">
             The Anatomy Of A Civil Claim: Case Study And <br />
             Legal Implications
           </h1>

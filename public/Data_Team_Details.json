@@ -1,38 +1,47 @@
 [
-    {
-      "number": 1,
-      "title": "Civil Litigation",
-      "description1": "Representing clients in a broad range of disputes, including contracts, property, and torts.",
-      "description2": "Resolving alimony (spousal support) disputes and ensuring fair settlements.",
-      "image": "image_url_here"
-    },
-    {
-      "number": 2,
-      "title": "Family Law",
-      "description1": "Providing compassionate support in matters related to divorce, child custody, and spousal support.",
-      "description2": "Explore jurisdictional variations and the impact of local laws on the adjudication of claims.",
-      "image": "image_url_here"
-    },
-    {
-      "number": 3,
-      "title": "Corporate Law",
-      "description1": "Offering legal guidance to businesses on formation, compliance, mergers, and acquisitions.",
-      "description2": "Criminal Defense",
-      "image": "image_url_here"
-    },
-    {
-      "number": 4,
-      "title": "Criminal Defense",
-      "description1": "Defending individuals charged with criminal offenses, ensuring their rights are protected.",
-      "description2": "Explore broader systemic implications, such as the role of civil litigation in shaping societal norms and business practices.",
-      "image": "image_url_here"
-    },
-    {
-      "number": 5,
-      "title": "Real Estate Law",
-      "description1": "Assisting clients with property transactions, zoning issues, and landlord-tenant disputes.",
-      "description2": "Offer recommendations for reducing disputes through alternative dispute resolution methods like mediation and arbitration.",
-      "image": "image_url_here"
-    }
-  ]
-  
+  {
+    "number": 1,
+    "title": "Civil Litigation",
+    "description1": "Representing clients in a broad range of disputes, including contracts, property, and torts.",
+    "description2": "Resolving alimony (spousal support) disputes and ensuring fair settlements.",
+    "image": "image_url_here",
+    "Practice_Area": "Litigation & Dispute Resolution",
+    "Professional_Memberships": "American Bar Association, National Association of Civil Litigators"
+  },
+  {
+    "number": 2,
+    "title": "Family Law",
+    "description1": "Providing compassionate support in matters related to divorce, child custody, and spousal support.",
+    "description2": "Explore jurisdictional variations and the impact of local laws on the adjudication of claims.",
+    "image": "image_url_here",
+    "Practice_Area": "Family Law & Domestic Relations",
+    "Professional_Memberships": "Family Law Association, National Academy of Family Lawyers"
+  },
+  {
+    "number": 3,
+    "title": "Corporate Law",
+    "description1": "Offering legal guidance to businesses on formation, compliance, mergers, and acquisitions.",
+    "description2": "Criminal Defense",
+    "image": "image_url_here",
+    "Practice_Area": "Corporate & Business Law",
+    "Professional_Memberships": "Corporate Law Society, International Business Lawyers Association"
+  },
+  {
+    "number": 4,
+    "title": "Criminal Defense",
+    "description1": "Defending individuals charged with criminal offenses, ensuring their rights are protected.",
+    "description2": "Explore broader systemic implications, such as the role of civil litigation in shaping societal norms and business practices.",
+    "image": "image_url_here",
+    "Practice_Area": "Criminal Defense Law",
+    "Professional_Memberships": "National Association of Criminal Defense Lawyers, Criminal Law Bar Association"
+  },
+  {
+    "number": 5,
+    "title": "Real Estate Law",
+    "description1": "Assisting clients with property transactions, zoning issues, and landlord-tenant disputes.",
+    "description2": "Offer recommendations for reducing disputes through alternative dispute resolution methods like mediation and arbitration.",
+    "image": "image_url_here",
+    "Practice_Area": "Real Estate & Property Law",
+    "Professional_Memberships": "Real Estate Lawyers Association, National Property Law Council"
+  }
+]

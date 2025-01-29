@@ -20,7 +20,7 @@ const Fairness = () => {
 
           {/* text container */}
           <div className="eb-garamond w-full xl:w-3/5 flex flex-col justify-center lg:px-5 xl:px-5 md:px-7 smaller:px-8 small:px-4 tiny:px-2 order-1">
-            <h1 className="header-1">
+            <h1 className="header-1 mb-[10px]">
               We Strive For Justice And Envision <br /> A Future Of
               <span className="text-[#D4AF37]"> Fairness</span>.
             </h1>
