@@ -1,0 +1,112 @@
+[
+    {
+      "image": "https://i.ibb.co.com/DHW6vh10/team1.png",
+      "name": "John Doe",
+      "designation": "Legal Analyst"
+    },
+    {
+      "image": "https://i.ibb.co.com/LDpZQ8Nk/team2.png",
+      "name": "Jane Smith",
+      "designation": "Real Estate Lawyer"
+    },
+    {
+      "image": "https://i.ibb.co.com/JF3tsdkY/team3.png",
+      "name": "Michael Johnson",
+      "designation": "Family Law Specialist"
+    },
+    {
+      "image": "https://i.ibb.co.com/ycSF1Wyn/team4.png",
+      "name": "Emily Brown",
+      "designation": "Litigation Attorney"
+    },
+    {
+      "image": "https://i.ibb.co.com/5hP7306Q/team5.png",
+      "name": "David Wilson",
+      "designation": "Property Law Consultant"
+    },
+    {
+      "image": "https://i.ibb.co.com/LXL1Pz8K/team6.png",
+      "name": "Sophia Martinez",
+      "designation": "Family Law Attorney"
+    },
+    {
+      "image": "https://i.ibb.co.com/6RDqbGL7/team7.png",
+      "name": "Liam Anderson",
+      "designation": "Divorce Lawyer"
+    },
+    {
+      "image": "https://i.ibb.co.com/nMfzpjQC/team8.png",
+      "name": "Olivia Thompson",
+      "designation": "Real Estate Attorney"
+    },
+    {
+        "image": "https://i.ibb.co.com/5hP7306Q/team5.png",
+        "name": "David Wilson",
+        "designation": "Property Law Consultant"
+      },
+      {
+        "image": "https://i.ibb.co.com/LXL1Pz8K/team6.png",
+        "name": "Sophia Martinez",
+        "designation": "Family Law Attorney"
+      },
+      {
+        "image": "https://i.ibb.co.com/6RDqbGL7/team7.png",
+        "name": "Liam Anderson",
+        "designation": "Divorce Lawyer"
+      },
+      {
+        "image": "https://i.ibb.co.com/nMfzpjQC/team8.png",
+        "name": "Olivia Thompson",
+        "designation": "Real Estate Attorney"
+      },
+      {
+        "image": "https://i.ibb.co.com/DHW6vh10/team1.png",
+        "name": "John Doe",
+        "designation": "Legal Analyst"
+      },
+      {
+        "image": "https://i.ibb.co.com/LDpZQ8Nk/team2.png",
+        "name": "Jane Smith",
+        "designation": "Real Estate Lawyer"
+      },
+      {
+        "image": "https://i.ibb.co.com/JF3tsdkY/team3.png",
+        "name": "Michael Johnson",
+        "designation": "Family Law Specialist"
+      },
+      {
+        "image": "https://i.ibb.co.com/ycSF1Wyn/team4.png",
+        "name": "Emily Brown",
+        "designation": "Litigation Attorney"
+      },
+      {
+        "image": "https://i.ibb.co.com/6RDqbGL7/team7.png",
+        "name": "Liam Anderson",
+        "designation": "Divorce Lawyer"
+      },
+      {
+        "image": "https://i.ibb.co.com/nMfzpjQC/team8.png",
+        "name": "Olivia Thompson",
+        "designation": "Real Estate Attorney"
+      },
+      {
+        "image": "https://i.ibb.co.com/DHW6vh10/team1.png",
+        "name": "John Doe",
+        "designation": "Legal Analyst"
+      },
+      {
+        "image": "https://i.ibb.co.com/LDpZQ8Nk/team2.png",
+        "name": "Jane Smith",
+        "designation": "Real Estate Lawyer"
+      },
+      {
+        "image": "https://i.ibb.co.com/JF3tsdkY/team3.png",
+        "name": "Michael Johnson",
+        "designation": "Family Law Specialist"
+      },
+      {
+        "image": "https://i.ibb.co.com/ycSF1Wyn/team4.png",
+        "name": "Emily Brown",
+        "designation": "Litigation Attorney"
+      }
+]

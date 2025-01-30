@@ -11,6 +11,8 @@ import Service_Route from "./components/Service-Components/Service_Route.jsx";
 import Service_Details_Route from "./components/Service-2-Components/Service_Details_Route.jsx";
 import Case_Study_Route from "./components/Case-Study-Component/Case_Study_Route.jsx";
 import Case_Study2_Route from "./components/Case-Study-2-Components/Case_Study2_Route.jsx";
+
+import TeamDetail_Routes from "./components/Team_Details/TeamDetail_Routes.jsx";
 import Team_Routes from "./components/Team/Team_Routes.jsx";
 
 const router = createBrowserRouter([
@@ -43,9 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/caseDetails",
         element: <Case_Study2_Route></Case_Study2_Route>,
-      },      {
+      },
+      {
         path: "/team",
-        element: <Team_Routes/>
+        element: <Team_Routes></Team_Routes>
+      },     
+      {
+        path: "/teamDetails",
+        element: <TeamDetail_Routes></TeamDetail_Routes>
       },
 
     ],
