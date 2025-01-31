@@ -14,6 +14,8 @@ import Case_Study2_Route from "./components/Case-Study-2-Components/Case_Study2_
 
 import TeamDetail_Routes from "./components/Team_Details/TeamDetail_Routes.jsx";
 import Team_Routes from "./components/Team/Team_Routes.jsx";
+import User_Dashboard from "./components/Dashboard/User-Dashboard/User_Dashboard.jsx";
+import User_Attorney_Dash from "./components/Dashboard/User-Attorney/User_Attorney_Dash.jsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +56,16 @@ const router = createBrowserRouter([
         path: "/teamDetails",
         element: <TeamDetail_Routes></TeamDetail_Routes>
       },
+      {
+        path:"/userDashboard",
+        element: <User_Dashboard></User_Dashboard>,
+        children:[
+          {
+             path:"attorney",
+             element:<User_Attorney_Dash></User_Attorney_Dash>
+          }
+        ]
+      }
 
     ],
   },

@@ -5,10 +5,12 @@ import { useState } from "react";
 import "../../style/Style.css";
 import { Link, useLocation } from "react-router-dom";
 import { Dropdown } from "antd";
-
+import { BiMessageDetail } from "react-icons/bi";
+import { IoIosNotifications } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa";
+import userphoto from "../../assets/userPhoto.png";
 
-const Navbar2 = () => {
+const DashBoardNavbar = () => {
   const location = useLocation();
   let [active, setActive] = useState(false);
 
@@ -76,7 +78,7 @@ const Navbar2 = () => {
   );
 
   return (
-    <div className="absolute top-0 left-0 w-full work-sans text-white  mt-[36px] ">
+    <div className=" w-full work-sans ">
       <header className="py-3 border-b border-b-amber-900">
         <nav className="flex justify-between items-center xl:px-5 md:px-7 smaller:px-8 small:px-4 tiny:px-2 max-w-[1320px] mx-auto w-full relative">
           {/* 1st */}
@@ -152,14 +154,7 @@ const Navbar2 = () => {
                   >
                     Contact Us
                   </li>
-                  {/* <li
-                    onClick={() => handleClick("Page")}
-                    className={`hover:text-[#B68C5A] flex items-center gap-1 ${
-                      categorySelect === "Page" ? "text-[#B68C5A]" : ""
-                    }`}
-                  >
-                    Page <HiMiniChevronDown />
-                  </li> */}
+
                   <li className={`hover:text-primary cursor-pointer`}>
                     <Dropdown overlay={dropdownContent} trigger={["hover"]}>
                       <a
@@ -175,21 +170,24 @@ const Navbar2 = () => {
               </div>
             </div>
             {/* Right Section */}
-            <div className="flex items-center gap-3">
-              <div className="lg:block hidden hover:scale-90">
-                <button className="bg-[#C7A87D] px-5 py-3 text-white rounded-lg font-medium whitespace-nowrap">
-                  Get Appointed
-                </button>
-              </div>
 
-              {/*droppings*/}
-              <div className="relative">
-                <div
-                  onClick={() => setActive((prev) => !prev)}
-                  className="block lg:hidden toggle-icon"
-                >
-                  <FaRegChartBar className="h-6 w-6" />
-                </div>
+            <div className="relative">
+              <div
+                onClick={() => setActive((prev) => !prev)}
+                className="block lg:hidden toggle-icon"
+              >
+                <FaRegChartBar className="h-6 w-6" />
+              </div>
+            </div>
+          </div>
+          {/* 3rd */}
+          <div className="hidden lg:block">
+            <div className="flex items-center gap-6">
+              <BiMessageDetail className="h-6 w-6" />
+              <IoIosNotifications className="h-6 w-[26px]" />
+
+              <div className="rounded-full h-14 w-14">
+                <img src={userphoto} alt="" />
               </div>
             </div>
           </div>
@@ -269,4 +267,4 @@ const Navbar2 = () => {
   );
 };
 
-export default Navbar2;
+export default DashBoardNavbar;

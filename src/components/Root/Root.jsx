@@ -1,13 +1,21 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import Navbar2 from "../Navbar/Navbar2";
+import DashBoardNavbar from "../Navbar/DashBoardNavbar";
 
 const Root = () => {
+
+  const location = useLocation();
+
+  let isDashboard = location.pathname.startsWith("/userDashboard");
+
   return (
     <div>
       <Navbar></Navbar>
-      <Navbar2></Navbar2>
+      {
+        isDashboard? <DashBoardNavbar></DashBoardNavbar> : <Navbar2></Navbar2>
+      }
       <div>
         <Outlet></Outlet>
       </div>
