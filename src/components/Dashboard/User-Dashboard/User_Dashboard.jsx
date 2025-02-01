@@ -16,6 +16,9 @@ import caseStatusDashboard4 from "../../../assets/casestatusDashboard4.png";
 import hearingPic from "../../../assets/hearing.png";
 import userPic from "../../../assets/userPhoto.png";
 import { useState } from "react";
+import { TfiLayoutSidebarLeft } from "react-icons/tfi";
+
+import { Button, Drawer, Radio, Space } from "antd";
 
 const User_Dashboard = () => {
   let [active, setActive] = useState("Dashboard");
@@ -24,8 +27,48 @@ const User_Dashboard = () => {
     setActive(name);
   };
 
+  // sidebar
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] = useState("left");
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
+  const onChange = (e) => {
+    setPlacement(e.target.value);
+  };
+
   return (
     <div className="max-w-[1320px] mx-auto w-full">
+      {/* sidebar starts */}
+      <div className="block lg:hidden big-mid:px-6 sm:px-8 px-[22px] mt-[30px]">
+        <Space>
+          <Radio.Group value={placement} onChange={onChange}></Radio.Group>
+
+          <TfiLayoutSidebarLeft
+            className="h-[40px] w-[40px] flex justify-center"
+            onClick={showDrawer}
+          />
+
+        </Space>
+        <Drawer
+          title="Basic Drawer"
+          placement={placement}
+          closable={false}
+          onClose={onClose}
+          open={open}
+          key={placement}
+        >
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Drawer>
+      </div>
+
+      {/* sidebar ends */}
+
       <div className="grid grid-cols-12 gap-6 lg:mt-[100px] mt-[50px] mb-[160px] xl:px-5 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
         <div className="hidden lg:block col-span-3 border rounded-[20px] pb-[113px] shadow-md">
           <div className=" bg-[#EDEDED] rounded-t-[20px]">
@@ -46,7 +89,6 @@ const User_Dashboard = () => {
 
           <div className="mt-10 flex justify-center">
             <nav className="space-y-[27px]">
-
               {/* 1 */}
               <a
                 onClick={() => handleClick("Dashboard")}
@@ -91,12 +133,18 @@ const User_Dashboard = () => {
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                <MdHistory className={`h-6 w-6 ${
-                    active === "Case History" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`} />
+                <MdHistory
+                  className={`h-6 w-6 ${
+                    active === "Case History"
+                      ? "text-[#B68C5A]"
+                      : "text-[#242628]"
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
-                    active === "Case History" ? "text-[#B68C5A]" : "text-[#242628]"
+                    active === "Case History"
+                      ? "text-[#B68C5A]"
+                      : "text-[#242628]"
                   }`}
                 >
                   Case History
@@ -108,12 +156,18 @@ const User_Dashboard = () => {
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                  <VscEditSession className={`h-6 w-6 ${
-                    active === "Appointment" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`} />
+                <VscEditSession
+                  className={`h-6 w-6 ${
+                    active === "Appointment"
+                      ? "text-[#B68C5A]"
+                      : "text-[#242628]"
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
-                    active === "Appointment" ? "text-[#B68C5A]" : "text-[#242628]"
+                    active === "Appointment"
+                      ? "text-[#B68C5A]"
+                      : "text-[#242628]"
                   }`}
                 >
                   Appointment
@@ -125,9 +179,11 @@ const User_Dashboard = () => {
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                  <TbFiles className={`h-6 w-6 ${
+                <TbFiles
+                  className={`h-6 w-6 ${
                     active === "Files" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`}  />
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
                     active === "Files" ? "text-[#B68C5A]" : "text-[#242628]"
@@ -142,9 +198,11 @@ const User_Dashboard = () => {
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                  <TbMessages className={`h-6 w-6 ${
+                <TbMessages
+                  className={`h-6 w-6 ${
                     active === "Message" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`}  />
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
                     active === "Message" ? "text-[#B68C5A]" : "text-[#242628]"
@@ -159,9 +217,11 @@ const User_Dashboard = () => {
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                  <MdOutlineSettings className={`h-6 w-6 ${
+                <MdOutlineSettings
+                  className={`h-6 w-6 ${
                     active === "Settings" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`} />
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
                     active === "Settings" ? "text-[#B68C5A]" : "text-[#242628]"
@@ -175,30 +235,38 @@ const User_Dashboard = () => {
 
           <div className="mt-[80px] flex justify-center ">
             <nav className="space-y-[27px]">
-            <a
+              <a
                 onClick={() => handleClick("Help & Info")}
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                  <IoIosInformationCircleOutline className={`h-6 w-6 ${
-                    active === "Help & Info" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`} />
+                <IoIosInformationCircleOutline
+                  className={`h-6 w-6 ${
+                    active === "Help & Info"
+                      ? "text-[#B68C5A]"
+                      : "text-[#242628]"
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
-                    active === "Help & Info" ? "text-[#B68C5A]" : "text-[#242628]"
+                    active === "Help & Info"
+                      ? "text-[#B68C5A]"
+                      : "text-[#242628]"
                   }`}
                 >
                   Help & Info
                 </span>
               </a>
-            <a
+              <a
                 onClick={() => handleClick("Logout")}
                 className="flex items-center gap-[15px] cursor-pointer"
                 href="#"
               >
-                  <HiOutlineLogout className={`h-6 w-6 ${
+                <HiOutlineLogout
+                  className={`h-6 w-6 ${
                     active === "Logout" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`} />
+                  }`}
+                />
                 <span
                   className={`sidebar-title ${
                     active === "Logout" ? "text-[#B68C5A]" : "text-[#242628]"
@@ -207,8 +275,6 @@ const User_Dashboard = () => {
                   Logout
                 </span>
               </a>
-
-             
             </nav>
           </div>
         </div>
