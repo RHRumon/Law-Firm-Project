@@ -51,19 +51,234 @@ const User_Dashboard = () => {
             className="h-[40px] w-[40px] flex justify-center"
             onClick={showDrawer}
           />
-
         </Space>
         <Drawer
-          title="Basic Drawer"
+          title={<span className="text-3xl eb-garamond">LawStick</span>}
           placement={placement}
           closable={false}
           onClose={onClose}
           open={open}
           key={placement}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+          <div className=" border rounded-[20px]">
+            <div className=" bg-[#EDEDED] rounded-t-[20px]">
+              <div className="flex justify-center items-center gap-[10px] py-[34px]">
+                <div className="rounded-full p-[3px] border border-black">
+                  <img
+                    className="rounded-full"
+                    src={profileImage}
+                    alt="profile"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-medium mb-[2px]">Martha Ulison</h3>
+                  <p className="text-gray-500 text-sm">ulison@email.com</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-5 px-4">
+              <nav className="space-y-[27px]">
+                {/* 1 */}
+                <a
+                  onClick={() => handleClick("Dashboard")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <MdOutlineDashboard
+                    className={`h-6 w-6 ${
+                      active === "Dashboard"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Dashboard"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Dashboard
+                  </span>
+                </a>
+                {/* 2 */}
+                <a
+                  onClick={() => handleClick("Attorney")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <GiClawHammer
+                    className={`h-6 w-6 ${
+                      active === "Attorney"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Attorney"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Attorney
+                  </span>
+                </a>
+                {/* 3 */}
+                <a
+                  onClick={() => handleClick("Case History")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <MdHistory
+                    className={`h-6 w-6 ${
+                      active === "Case History"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Case History"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Case History
+                  </span>
+                </a>
+                {/* 4 */}
+                <a
+                  onClick={() => handleClick("Appointment")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <VscEditSession
+                    className={`h-6 w-6 ${
+                      active === "Appointment"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Appointment"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Appointment
+                  </span>
+                </a>
+                {/* 5 */}
+                <a
+                  onClick={() => handleClick("Files")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <TbFiles
+                    className={`h-6 w-6 ${
+                      active === "Files" ? "text-[#B68C5A]" : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Files" ? "text-[#B68C5A]" : "text-[#242628]"
+                    }`}
+                  >
+                    Files
+                  </span>
+                </a>
+                {/* 6 */}
+                <a
+                  onClick={() => handleClick("Message")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <TbMessages
+                    className={`h-6 w-6 ${
+                      active === "Message" ? "text-[#B68C5A]" : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Message" ? "text-[#B68C5A]" : "text-[#242628]"
+                    }`}
+                  >
+                    Message
+                  </span>
+                </a>
+                {/* 7 */}
+                <a
+                  onClick={() => handleClick("Settings")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <MdOutlineSettings
+                    className={`h-6 w-6 ${
+                      active === "Settings"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Settings"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Settings
+                  </span>
+                </a>
+              </nav>
+            </div>
+
+            <div className="mt-[50px] px-4">
+              <nav className="space-y-[27px]">
+                <a
+                  onClick={() => handleClick("Help & Info")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <IoIosInformationCircleOutline
+                    className={`h-6 w-6 ${
+                      active === "Help & Info"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Help & Info"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Help & Info
+                  </span>
+                </a>
+                <a
+                  onClick={() => handleClick("Logout")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
+                >
+                  <HiOutlineLogout
+                    className={`h-6 w-6 ${
+                      active === "Logout" ? "text-[#B68C5A]" : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Logout" ? "text-[#B68C5A]" : "text-[#242628]"
+                    }`}
+                  >
+                    Logout
+                  </span>
+                </a>
+              </nav>
+            </div>
+          </div>
         </Drawer>
       </div>
 
