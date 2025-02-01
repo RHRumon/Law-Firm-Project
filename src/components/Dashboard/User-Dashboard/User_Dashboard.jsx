@@ -16,9 +16,12 @@ import caseStatusDashboard4 from "../../../assets/casestatusDashboard4.png";
 import hearingPic from "../../../assets/hearing.png";
 import userPic from "../../../assets/userPhoto.png";
 import { useState } from "react";
-import { TfiLayoutSidebarLeft } from "react-icons/tfi";
+// import { TfiLayoutSidebarLeft } from "react-icons/tfi";
+import { RiMenuUnfold3Fill } from "react-icons/ri";
 
 import { Button, Drawer, Radio, Space } from "antd";
+import { Link } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 const User_Dashboard = () => {
   let [active, setActive] = useState("Dashboard");
@@ -43,11 +46,11 @@ const User_Dashboard = () => {
   return (
     <div className="max-w-[1320px] mx-auto w-full">
       {/* sidebar starts */}
-      <div className="block lg:hidden big-mid:px-6 sm:px-8 px-[22px] mt-[30px]">
+      <div className="block lg:hidden big-mid:px-6 sm:px-8 px-[22px] mt-[30px] ">
         <Space>
           <Radio.Group value={placement} onChange={onChange}></Radio.Group>
 
-          <TfiLayoutSidebarLeft
+          <RiMenuUnfold3Fill
             className="h-[40px] w-[40px] flex justify-center"
             onClick={showDrawer}
           />
@@ -59,6 +62,7 @@ const User_Dashboard = () => {
           onClose={onClose}
           open={open}
           key={placement}
+          className="tiny:max-w-[280px] small:max-w-[350px] smaller:max-w-[445px]"
         >
           <div className="border rounded-[20px] pb-7 shadow-lg">
             <div className=" bg-[#EDEDED] rounded-t-[20px]">
@@ -305,43 +309,54 @@ const User_Dashboard = () => {
           <div className="mt-10 flex justify-center">
             <nav className="space-y-[27px]">
               {/* 1 */}
+              
               <a
-                onClick={() => handleClick("Dashboard")}
-                className="flex items-center gap-[15px] cursor-pointer"
-                href="#"
-              >
-                <MdOutlineDashboard
-                  className={`h-6 w-6 ${
-                    active === "Dashboard" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`}
-                />
-                <span
-                  className={`sidebar-title ${
-                    active === "Dashboard" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`}
+                  onClick={() => handleClick("Dashboard")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  href="#"
                 >
-                  Dashboard
-                </span>
-              </a>
-              {/* 2 */}
-              <a
-                onClick={() => handleClick("Attorney")}
-                className="flex items-center gap-[15px] cursor-pointer"
-                href="#"
-              >
-                <GiClawHammer
-                  className={`h-6 w-6 ${
-                    active === "Attorney" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`}
-                />
-                <span
-                  className={`sidebar-title ${
-                    active === "Attorney" ? "text-[#B68C5A]" : "text-[#242628]"
-                  }`}
+                  <MdOutlineDashboard
+                    className={`h-6 w-6 ${
+                      active === "Dashboard"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Dashboard"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Dashboard
+                  </span>
+                </a>
+                
+                {/* 2 */}
+                <a
+                  onClick={() => handleClick("Attorney")}
+                  className="flex items-center gap-[15px] cursor-pointer"
+                  
                 >
-                  Attorney
-                </span>
-              </a>
+                  <GiClawHammer
+                    className={`h-6 w-6 ${
+                      active === "Attorney"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  />
+                  <span
+                    className={`sidebar-title ${
+                      active === "Attorney"
+                        ? "text-[#B68C5A]"
+                        : "text-[#242628]"
+                    }`}
+                  >
+                    Attorney
+                  </span>
+                </a>
+              
               {/* 3 */}
               <a
                 onClick={() => handleClick("Case History")}

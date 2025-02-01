@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Alina Gain",
+      "designation": "Criminal Lawyer",
+      "experience": "4 Years",
+      "qualification": "Juris Doctor JD: Oxford University",
+      "price": "$120.00",
+      "image": "https://example.com/images/alina-gain.jpg"
+    },
+    {
+      "name": "Michael Brown",
+      "designation": "Corporate Lawyer",
+      "experience": "6 Years",
+      "qualification": "LL.M in Business Law: Harvard University",
+      "price": "$150.00",
+      "image": "https://example.com/images/michael-brown.jpg"
+    },
+    {
+      "name": "Sophia Clarke",
+      "designation": "Family Lawyer",
+      "experience": "5 Years",
+      "qualification": "LL.B: Yale University",
+      "price": "$130.00",
+      "image": "https://example.com/images/sophia-clarke.jpg"
+    },
+    {
+      "name": "Daniel Evans",
+      "designation": "Intellectual Property Lawyer",
+      "experience": "7 Years",
+      "qualification": "LL.M in IP Law: Stanford University",
+      "price": "$160.00",
+      "image": "https://example.com/images/daniel-evans.jpg"
+    },
+    {
+      "name": "Emma White",
+      "designation": "Immigration Lawyer",
+      "experience": "3 Years",
+      "qualification": "Juris Doctor JD: Cambridge University",
+      "price": "$110.00",
+      "image": "https://example.com/images/emma-white.jpg"
+    },
+    {
+      "name": "William Scott",
+      "designation": "Tax Lawyer",
+      "experience": "8 Years",
+      "qualification": "LL.M in Taxation: Columbia University",
+      "price": "$170.00",
+      "image": "https://example.com/images/william-scott.jpg"
+    }
+  ]
+  

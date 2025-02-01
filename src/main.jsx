@@ -58,13 +58,17 @@ const router = createBrowserRouter([
       },
       {
         path:"/userDashboard",
-        element: <User_Dashboard></User_Dashboard>,
-        children:[
-          {
-             path:"attorney",
-             element:<User_Attorney_Dash></User_Attorney_Dash>
-          }
-        ]
+        element: <User_Dashboard></User_Dashboard>
+        // children:[
+        //   {
+        //      path:"attorney",
+        //      element:<User_Attorney_Dash></User_Attorney_Dash>,
+        //   }
+        // ]
+      },
+      {
+         path:"/userAttorney",
+         element:<User_Attorney_Dash></User_Attorney_Dash>
       }
 
     ],
