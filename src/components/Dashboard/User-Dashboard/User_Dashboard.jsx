@@ -60,7 +60,7 @@ const User_Dashboard = () => {
           open={open}
           key={placement}
         >
-          <div className=" border rounded-[20px]">
+          <div className="border rounded-[20px] pb-7 shadow-lg">
             <div className=" bg-[#EDEDED] rounded-t-[20px]">
               <div className="flex justify-center items-center gap-[10px] py-[34px]">
                 <div className="rounded-full p-[3px] border border-black">
