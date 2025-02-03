@@ -32,11 +32,11 @@ const User_Attorney_Dash = () => {
     setActive(name);
   };
 
-   useEffect(() => {
-      fetch("Data_Team_Details.json")
-        .then((res) => res.json())
-        .then((data) => setAttornies(data));
-    }, []);
+  useEffect(() => {
+    fetch("userAttorney.json")
+      .then((res) => res.json())
+      .then((data) => setAttornies(data));
+  }, []);
 
   // sidebar
   const [open, setOpen] = useState(false);
@@ -54,7 +54,7 @@ const User_Attorney_Dash = () => {
   return (
     <div className="max-w-[1320px] mx-auto w-full">
       {/* sidebar starts */}
-      <div className="block lg:hidden big-mid:px-6 sm:px-8 px-[22px] mt-[30px] ">
+      <div className="block lg:hidden big-mid:px-6 sm:px-8 px-[22px] mt-[90px] ">
         <Space>
           <Radio.Group value={placement} onChange={onChange}></Radio.Group>
 
@@ -355,7 +355,6 @@ const User_Attorney_Dash = () => {
                   Attorney
                 </span>
               </a>
-
               {/* 3 */}
               <a
                 onClick={() => handleClick("Case History")}
@@ -509,43 +508,21 @@ const User_Attorney_Dash = () => {
         </div>
 
         <div className="lg:col-span-9 col-span-12 border rounded-[20px] shadow-lg xl:pb-0 pb-[20px]">
-          <h1 className="dashboard-title md:py-[38px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] border-b-2">
-            Attorney
-          </h1>
+          <div className="flex justify-between items-center border-b-2 md:py-[38px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] ">
+            <h1 className="dashboard-title ">
+              Attorney
+            </h1>
+
+            <div>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
 
           <div className="lg:px-10 px-5 mt-10">
             <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 ">
-              {/* 1 */}
-              {/* <div className="lg:w-[285px] w-full h-[324px] px-6 py-8 border rounded-[10px] shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-full flex justify-center items-center">
-                    <img
-                      className="h-[70px] w-[70px]"
-                      src={exattorney}
-                      alt=""
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <p class="font-semibold text-lg leading-[21px] text-[#242628] work-sans">
-                      Alina Gain
-                    </p>
-                    <p className="font-medium work-sans text-[#818B8F]">Criminal Lawyer</p>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <p className="mb-3 font-medium work-sans">Experience: <span>4 Year</span></p>
-                  <p>Qualification: Juris Doctor JD: Oxford University</p>
-                </div>
-                <div className="mt-10 flex justify-between items-center">
-                  <button className="bg-[#C7A87D] hover:bg-[#B68C5A] w-[123px] h-[43px] lg:px-[22px] px-5 py-4 rounded-lg font-medium whitespace-nowrap text-base flex items-center gap-1 text-white work-sans">
-                    Book Now
-                  </button>
-                  <p className="text-[#B68C5A] font-semibold text-lg work-sans">$120.00</p>
-                </div>
-              </div> */}
-              {
-                 attornies.map((attorney, idx) => <Attorney key={idx} attorney={attorney}></Attorney>)
-              }
+              {attornies.map((attorney, idx) => (
+                <Attorney key={idx} attorney={attorney}></Attorney>
+              ))}
             </div>
 
             <div className="grid xl:grid-cols-2 grid-cols-1  gap-[22px] big-mid:mt-[60px] mt-[50px]">

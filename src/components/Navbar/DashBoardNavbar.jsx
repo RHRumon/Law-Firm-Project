@@ -90,12 +90,12 @@ const DashBoardNavbar = () => {
             />
           </a>
           {/* 2nd */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 ">
             <div className="hidden lg:block">
               <div
                 className={`flex gap-9 text-lg font-medium transition-all  w-full items-center`}
               >
-                <ul className="flex items-center gap-8">
+                <ul className="flex items-center gap-8 ">
                   <div>
                     <Link to={`/`}>
                       <li
