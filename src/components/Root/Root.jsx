@@ -8,7 +8,8 @@ const Root = () => {
 
   const location = useLocation();
 
-  let isDashboard = location.pathname.startsWith("/userDashboard");
+  let isDashboard = location.pathname.startsWith('/userDashboard') || location.pathname.startsWith('/userAttorney') || location.pathname.startsWith('/caseHistoryDetails');
+
 
   return (
     <div>
@@ -16,6 +17,7 @@ const Root = () => {
       {
         isDashboard? <DashBoardNavbar></DashBoardNavbar> : <Navbar2></Navbar2>
       }
+
       <div>
         <Outlet></Outlet>
       </div>

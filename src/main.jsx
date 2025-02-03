@@ -16,6 +16,8 @@ import TeamDetail_Routes from "./components/Team_Details/TeamDetail_Routes.jsx";
 import Team_Routes from "./components/Team/Team_Routes.jsx";
 import User_Dashboard from "./components/Dashboard/User-Dashboard/User_Dashboard.jsx";
 import User_Attorney_Dash from "./components/Dashboard/User-Attorney/User_Attorney_Dash.jsx";
+import Case_History_UserDash from "./components/Dashboard/User-Case-History/Case_History_DetailsUserDash.jsx";
+import Case_History_DetailsUserDash from "./components/Dashboard/User-Case-History/Case_History_DetailsUserDash.jsx";
 
 const router = createBrowserRouter([
   {
@@ -69,7 +71,12 @@ const router = createBrowserRouter([
       {
          path:"/userAttorney",
          element:<User_Attorney_Dash></User_Attorney_Dash>
+      },
+      {
+         path:"/caseHistoryDetails",
+         element:<Case_History_DetailsUserDash></Case_History_DetailsUserDash>
       }
+
 
     ],
   },

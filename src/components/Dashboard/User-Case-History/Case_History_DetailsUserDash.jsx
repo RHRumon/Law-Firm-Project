@@ -11,29 +11,42 @@ import { HiOutlineLogout } from "react-icons/hi";
 import hearingPic from "../../../assets/hearing.png";
 import userPic from "../../../assets/userPhoto.png";
 import { useEffect, useState } from "react";
+import guy from "../../../assets/case-History-guy.png";
 // import { TfiLayoutSidebarLeft } from "react-icons/tfi";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
 
 import { Button, Drawer, Radio, Space } from "antd";
 import { Link } from "react-router-dom";
 import exattorney from "../../../assets/exAttorney.png";
-import Attorney from "./Attorney";
+// import Attorney from "./Attorney";
 
 import { FiSearch } from "react-icons/fi";
 import { Select } from "antd";
+import Attorny_Info from "./Attorny_Info";
+import Case_info from "./Case_info";
 
-const User_Attorney_Dash = () => {
+const Case_History_DetailsUserDash = () => {
   let [active, setActive] = useState("Dashboard");
-  let [attornies, setAttornies] = useState([]);
+  let [attorniesInfo, setAttorniesInfo] = useState([]);
+  let [caseInfo, setCaseInfo] = useState([]);
   let handleClick = (name) => {
     setActive(name);
   };
 
   useEffect(() => {
-    fetch("userAttorney.json")
+    fetch("Attorney_info_Case_His_UD.json")
       .then((res) => res.json())
-      .then((data) => setAttornies(data));
+      .then((data) => setAttorniesInfo(data));
   }, []);
+
+  useEffect(() => {
+    fetch("Case_info_Case_His_UD.json")
+      .then((res) => res.json())
+      .then((data) => setCaseInfo(data));
+  }, []);
+  // console.log(attorniesInfo);
+  console.log(caseInfo);
+  
 
   // sidebar
   const [open, setOpen] = useState(false);
@@ -314,7 +327,6 @@ const User_Attorney_Dash = () => {
           <div className="mt-10 flex justify-center">
             <nav className="space-y-[27px]">
               {/* 1 */}
-
               <a
                 onClick={() => handleClick("Dashboard")}
                 className="flex items-center gap-[15px] cursor-pointer"
@@ -333,7 +345,6 @@ const User_Attorney_Dash = () => {
                   Dashboard
                 </span>
               </a>
-
               {/* 2 */}
               <a
                 onClick={() => handleClick("Attorney")}
@@ -505,104 +516,27 @@ const User_Attorney_Dash = () => {
         </div>
 
         <div className="lg:col-span-9 col-span-12 border rounded-[20px] shadow-lg xl:pb-0 pb-[20px]">
-          <div className="flex justify-between items-center border-b-2 md:py-[30px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] ">
-            <div>
-              <h1 className="dashboard-title ">Attorney</h1>
-            </div>
-
-            {/* search bar */}
-            <div className="flex md:flex-nowrap flex-wrap justify-center  items-center gap-3">
-              <div className={`relative flex mr-2 w-[274px]  items-center`}>
-                <FiSearch className="absolute right-3 text-[#818B8F] text-[24px] pointer-events-none" />
-                <input
-                  className={`form-input w-full text-base sm:text-sm border   px-[20px] py-[19px] rounded-lg border-[#E0E0E0] focus:outline-none transition-all duration-200 ease-in-out`}
-                  // value={value}
-                  // onChange={onChange}
-                  placeholder={"Search Attorney...."}
-                />
-              </div>
-              {/* filter */}
-              <div>
-                <Select
-                  defaultValue="lucy"
-                  style={{
-                    width: 220,
-                    height: 56,
-                  }}
-                  // onChange={handleChange}
-                  options={[
-                    {
-                      value: "jack",
-                      label: "Jack",
-                    },
-                    {
-                      value: "lucy",
-                      label: "Lucy",
-                    },
-                    {
-                      value: "Yiminghe",
-                      label: "yiminghe",
-                    },
-                    {
-                      value: "disabled",
-                      label: "Disabled",
-                      disabled: true,
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+          <div className="flex justify-start border-b-2 md:py-[38px] py-[17px] big-mid:px-10 sm:px-8 px-[22px] ">
+            <h1 className="dashboard-title">Case History</h1>
           </div>
 
-          <div className="lg:px-10 px-5 mt-10 mb-9">
-            <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 ">
-              {attornies.map((attorney, idx) => (
-                <Attorney key={idx} attorney={attorney}></Attorney>
-              ))}
+          <div className="md:px-10 px-5 md:mt-10 mt-6 md:mb-[62px] ">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-6 ">
+              {/* 1 */}
+              <div>
+                {attorniesInfo.map((attorney, idx) => (
+                  <Attorny_Info key={idx} attorney={attorney} />
+                ))}
+              </div>
+              {/* 2 */}
+              <div>
+                {
+                   caseInfo.map((Case, idx) => (
+                    <Case_info key={idx} Case={Case}/>
+                   ))
+                }
+              </div>               
             </div>
-
-            {/* <div className="grid xl:grid-cols-2 grid-cols-1  gap-[22px] big-mid:mt-[60px] mt-[50px]">
-              <div>
-                <h1 className="font-medium text-2xl mb-6">Upcoming Hearing</h1>
-                <div className="flex items-center gap-8 h-[180px] bg-[#EDEEF1] hover:bg-[#20C997] text-black hover:text-white rounded-[10px] px-[28px] py-[28px]">
-                  <div>
-                    <div className="rounded-full sm:h-[60px] sm:w-[60px] h-[40px] w-[40px] flex justify-center items-center bg-white">
-                      <img
-                        className="sm:h-9 sm:w-9 h-6 w-6"
-                        src={hearingPic}
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="font-medium sm:max-h-none max-h-[128px] overflow-y-auto">
-                    <p className="sm:text-lg text-base">Date: 19 Dec 2024</p>
-                    <p>Lawyer: Arthur Canal Doyle</p>
-                    <p>Location: One First Street, NE, in Washington, DC</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h1 className="font-medium text-2xl mb-6">Recent Message</h1>
-                <div className="flex items-center gap-8 h-[180px] bg-[#EDEEF1] hover:bg-[#20C997] text-black hover:text-white rounded-[10px] px-[28px] py-[28px]">
-                  <div>
-                    <div className="rounded-full sm:h-[80px] sm:w-[80px] h-[60px] w-[60px] flex justify-center items-center ">
-                      <img
-                        className="sm:h-[80px] sm:w-[80px] h-[60px] w-[60px]"
-                        src={userPic}
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div className="sm:max-h-none max-h-[128px] overflow-y-auto font-medium text-lg ">
-                    <p className="font-semibold text-lg  work-sans">
-                      Arthur Canal Doyle
-                    </p>
-                    <p className="simple-text">Send you a message</p>
-                    <p className="simple-text text-[#818B8F]">1 min ago</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
@@ -610,4 +544,4 @@ const User_Attorney_Dash = () => {
   );
 };
 
-export default User_Attorney_Dash;
+export default Case_History_DetailsUserDash;
