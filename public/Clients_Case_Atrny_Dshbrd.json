@@ -1,0 +1,24 @@
+[
+    {
+      "name": "John Doe",
+      "image": "https://i.ibb.co.com/8LBT96YN/image.png",
+      "caseNumber": 7
+    },
+    {
+      "name": "Jane Smith",
+      "image": "https://i.ibb.co.com/YFNVbqN1/image-1.png",
+      "caseNumber": 5
+    },
+    {
+      "name": "Robert Brown",
+      "image": "https://i.ibb.co.com/q3K4Jg4m/image-1.png",
+      "caseNumber": 2
+    },
+    {
+      "name": "Emily Johnson",
+      "image": "https://i.ibb.co.com/5XB3Ky2C/image-3.png",
+      "caseNumber": 1
+    }
+  
+  ]
+  

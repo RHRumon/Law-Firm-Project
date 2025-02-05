@@ -11,28 +11,35 @@ import { HiOutlineLogout } from "react-icons/hi";
 import hearingPic from "../../../assets/hearing.png";
 import userPic from "../../../assets/userPhoto.png";
 import { useEffect, useState } from "react";
+import guy from "../../../assets/case-History-guy.png";
 // import { TfiLayoutSidebarLeft } from "react-icons/tfi";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
 
 import { Button, Drawer, Radio, Space } from "antd";
-import { Link } from "react-router-dom";
-import exattorney from "../../../assets/exAttorney.png";
-import Attorney from "./Attorney";
 
 import { FiSearch } from "react-icons/fi";
 import { Select } from "antd";
+import Attorny_Info_Apoinmnt_Dtls from "./Attorny_Info_Apoinmnt_Dtls";
+import Case_Info_Apoinmnt_Dtls from "./Case_Info_Apoinmnt_Dtls";
 
-const User_Attorney_Dash = () => {
+const User_Appointment_Details = () => {
   let [active, setActive] = useState("Dashboard");
-  let [attornies, setAttornies] = useState([]);
+  let [attorniesInfoAppoinment, setAttorniesInfoAppoinment] = useState([]);
+  let [caseInfoAppointment, setCaseInfoAppointment] = useState([]);
   let handleClick = (name) => {
     setActive(name);
   };
 
   useEffect(() => {
-    fetch("userAttorney.json")
+    fetch("Attorney_info_userApointmnt.json")
       .then((res) => res.json())
-      .then((data) => setAttornies(data));
+      .then((data) => setAttorniesInfoAppoinment(data));
+  }, []);
+
+  useEffect(() => {
+    fetch("Case_info_Apoinmnt_dtls.json")
+      .then((res) => res.json())
+      .then((data) => setCaseInfoAppointment(data));
   }, []);
 
   // sidebar
@@ -314,7 +321,6 @@ const User_Attorney_Dash = () => {
           <div className="mt-10 flex justify-center">
             <nav className="space-y-[27px]">
               {/* 1 */}
-
               <a
                 onClick={() => handleClick("Dashboard")}
                 className="flex items-center gap-[15px] cursor-pointer"
@@ -333,7 +339,6 @@ const User_Attorney_Dash = () => {
                   Dashboard
                 </span>
               </a>
-
               {/* 2 */}
               <a
                 onClick={() => handleClick("Attorney")}
@@ -505,62 +510,30 @@ const User_Attorney_Dash = () => {
         </div>
 
         <div className="lg:col-span-9 col-span-12 border rounded-[20px] shadow-lg xl:pb-0 pb-[20px]">
-          <div className="flex justify-between items-center border-b-2 md:py-[30px] py-[17px] big-mid:px-12 sm:px-8 px-[22px] ">
-            <div>
-              <h1 className="dashboard-title ">Attorney</h1>
-            </div>
-
-            {/* search bar */}
-            <div className="flex md:flex-nowrap flex-wrap justify-center  items-center gap-3">
-              <div className={`relative flex mr-2 w-[274px]  items-center`}>
-                <FiSearch className="absolute right-3 text-[#818B8F] text-[24px] pointer-events-none" />
-                <input
-                  className={`form-input w-full text-base sm:text-sm border   px-[20px] py-[19px] rounded-lg border-[#E0E0E0] focus:outline-none transition-all duration-200 ease-in-out`}
-                  // value={value}
-                  // onChange={onChange}
-                  placeholder={"Search Attorney...."}
-                />
-              </div>
-              {/* filter */}
-              <div>
-                <Select
-                  defaultValue="lucy"
-                  style={{
-                    width: 220,
-                    height: 56,
-                  }}
-                  // onChange={handleChange}
-                  options={[
-                    {
-                      value: "jack",
-                      label: "Jack",
-                    },
-                    {
-                      value: "lucy",
-                      label: "Lucy",
-                    },
-                    {
-                      value: "Yiminghe",
-                      label: "yiminghe",
-                    },
-                    {
-                      value: "disabled",
-                      label: "Disabled",
-                      disabled: true,
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+          <div className="flex justify-start border-b-2 md:py-[38px] py-[17px] big-mid:px-10 sm:px-8 px-[22px] ">
+            <h1 className="dashboard-title">Appointment</h1>
           </div>
 
-          <div className="lg:px-10 px-5 mt-10 mb-9">
-            <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 ">
-              {attornies.map((attorney, idx) => (
-                <Attorney key={idx} attorney={attorney}></Attorney>
-              ))}
+          <div className="md:px-10 px-5 md:mt-10 mt-6 md:mb-[62px] ">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-6 ">
+              {/* 1 */}
+              <div>
+                {attorniesInfoAppoinment.map((attorneyInfo, idx) => (
+                  <Attorny_Info_Apoinmnt_Dtls
+                    key={idx}
+                    attorneyInfo={attorneyInfo}
+                  />
+                ))}
+              </div>
+              {/* 2 */}
+              <div>
+                {
+                 caseInfoAppointment.map((caseInfo, idx) => (
+                  <Case_Info_Apoinmnt_Dtls key={idx} caseInfo={caseInfo} />
+                 )) 
+                }
+              </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -568,4 +541,4 @@ const User_Attorney_Dash = () => {
   );
 };
 
-export default User_Attorney_Dash;
+export default User_Appointment_Details;

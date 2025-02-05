@@ -92,8 +92,15 @@
     }
   }
 
-  .text-500-18-sans{
-    
+  .text-sans-500-16{
+    font-family: 'Work Sans', sans-serif; 
+    font-weight: 500; 
+    font-size: 16px; 
+  }
+  .text-sans-500-14{
+    font-family: 'Work Sans', sans-serif; 
+    font-weight: 500; 
+    font-size: 14px; 
   }
 
   .primary-btn {
