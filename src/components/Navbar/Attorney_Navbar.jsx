@@ -9,6 +9,9 @@ import { BiMessageDetail } from "react-icons/bi";
 import { IoIosNotifications } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa";
 import userphoto from "../../assets/userPhoto.png";
+import { FaChevronDown } from "react-icons/fa";
+
+
 
 const Attorney_Navbar = () => {
 
@@ -83,94 +86,15 @@ const Attorney_Navbar = () => {
               <header className="py-3 border-b border-b-amber-900">
                 <nav className="flex justify-between items-center xl:px-5 md:px-7 smaller:px-8 small:px-4 tiny:px-2 max-w-[1320px] mx-auto w-full relative">
                   {/* 1st */}
-                  {/* <a href="">
+                  <a href="">
                     <img
                       className="xl:w-[56px] xl:h-[62px] md:w-[45px] md:h-[49px] w-[29px] h-[32px]"
                       src={navLogo}
                       alt=""
                     />
-                  </a> */}
+                  </a>
                   {/* 2nd */}
                   <div className="flex items-center gap-3 ">
-                    <div className="hidden lg:block">
-                      <div
-                        className={`flex gap-9 text-lg font-medium transition-all  w-full items-center`}
-                      >
-                        <ul className="flex items-center gap-8 ">
-                          <div>
-                            <Link to={`/`}>
-                              <li
-                                onClick={() => handleClick("Home")}
-                                className={`hover:text-[#B68C5A] ${
-                                  categorySelect === "Home" ? "text-[#B68C5A]" : ""
-                                }`}
-                              >
-                                Home
-                              </li>
-                            </Link>
-                          </div>
-                          <div>
-                            <Link to={`/about`}>
-                              <li
-                                onClick={() => handleClick("About")}
-                                className={`hover:text-[#B68C5A] ${
-                                  categorySelect === "About" ? "text-[#B68C5A]" : ""
-                                }`}
-                              >
-                                About
-                              </li>
-                            </Link>
-                          </div>
-                          <div>
-                            <Link to={`/service`}>
-                              <li
-                                onClick={() => handleClick("Service")}
-                                className={`hover:text-[#B68C5A] ${
-                                  categorySelect === "Service" ? "text-[#B68C5A]" : ""
-                                }`}
-                              >
-                                Service
-                              </li>
-                            </Link>
-                          </div>
-                          <div>
-                            <Link to={`/caseStudy`}>
-                              <li
-                                onClick={() => handleClick("Case Study")}
-                                className={`hover:text-[#B68C5A] ${
-                                  categorySelect === "Case Study"
-                                    ? "text-[#B68C5A]"
-                                    : ""
-                                }`}
-                              >
-                                Case Study
-                              </li>
-                            </Link>
-                          </div>
-                          <li
-                            onClick={() => handleClick("Contact Us")}
-                            className={`hover:text-[#B68C5A] ${
-                              categorySelect === "Contact Us" ? "text-[#B68C5A]" : ""
-                            }`}
-                          >
-                            Contact Us
-                          </li>
-        
-                          <li className={`hover:text-primary cursor-pointer`}>
-                            <Dropdown overlay={dropdownContent} trigger={["hover"]}>
-                              <a
-                                onClick={(e) => e.preventDefault()}
-                                className="flex items-center gap-2"
-                              >
-                                Pages
-                                <FaAngleDown className="text-sm" />
-                              </a>
-                            </Dropdown>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    {/* Right Section */}
         
                     <div className="relative">
                       <div
@@ -190,6 +114,8 @@ const Attorney_Navbar = () => {
                       <div className="rounded-full h-14 w-14">
                         <img src={userphoto} alt="" />
                       </div>
+                      <FaChevronDown className="ml-[-14px] h-6 w-6"/>
+
                     </div>
                   </div>
                   {active && (

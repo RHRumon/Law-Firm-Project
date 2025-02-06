@@ -382,7 +382,7 @@ const Attorney_DashBoard = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-12 gap-6 lg:mt-[100px] mt-[50px] mb-[160px] xl:px-0 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
+      <div className="grid grid-cols-12 gap-6 lg:mt-0 mt-[50px] mb-[160px] xl:px-0 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
         <div className="hidden lg:block col-span-3 border rounded-[20px] pb-[113px] shadow-md">
           <div className=" bg-[#EDEDED] rounded-t-[20px]">
             <div className="flex justify-center items-center gap-[10px] py-[34px]">
