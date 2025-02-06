@@ -3,25 +3,31 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import Navbar2 from "../Navbar/Navbar2";
 import DashBoardNavbar from "../Navbar/DashBoardNavbar";
+import Attorney_Navbar from "../Navbar/Attorney_Navbar";
 
 const Root = () => {
 
   const location = useLocation();
 
-  let isDashboard = location.pathname.startsWith('/userDashboard') || location.pathname.startsWith('/userAttorney') || location.pathname.startsWith('/caseHistoryDetails') || location.pathname.startsWith('/userAppointmentDetails' || location.pathname.startsWith('/attorneyDashboard') );
-
+  let isDashboard = location.pathname.startsWith('/userDashboard') || 
+                  location.pathname.startsWith('/userAttorney') || 
+                  location.pathname.startsWith('/caseHistoryDetails') || 
+                  location.pathname.startsWith('/userAppointmentDetails');
+                  
+  let isAttorneyNavbar = location.pathname === "/attorneyDashboard";
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar/>
+  
       {
-        isDashboard? <DashBoardNavbar></DashBoardNavbar> : <Navbar2></Navbar2>
+        isAttorneyNavbar? (<Attorney_Navbar/>) : isDashboard ? (<DashBoardNavbar/>) : (<Navbar2/>)
       }
       
       <div>
-        <Outlet></Outlet>
+        <Outlet/>
       </div>
-      <Footer></Footer>
+      <Footer/>
     </div>
   );
 };

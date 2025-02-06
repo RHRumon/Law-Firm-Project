@@ -78,6 +78,7 @@ const data = [
 import { Flex, Progress } from "antd";
 import Clients_progress from "./Clients_progress";
 import Next_Apntmnrt_Single_AD from "./Next_Apntmnrt_Single_AD";
+import Message_single from "./Message_single";
 
 const cardinal = curveCardinal.tension(0.2);
 
@@ -118,6 +119,13 @@ const Attorney_DashBoard = () => {
       .then((data) => setNextAppointment(data));
   }, []);
 
+  let [messages, setMessages] = useState([]);
+  useEffect(() => {
+    fetch("Messages_Attorney.json")
+      .then((res) => res.json())
+      .then((data) => setMessages(data));
+  }, []);
+  
   return (
     <div className="max-w-[1320px] mx-auto w-full">
       {/* sidebar starts */}
@@ -363,7 +371,13 @@ const Attorney_DashBoard = () => {
 
       {/* sidebar ends */}
 
-      <div className="grid grid-cols-12 gap-6 lg:mt-[100px] mt-[50px] mb-[160px] xl:px-5 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
+      <div className="sm:mt-[40px] sm:mb-[56px] mt-5 mb-7 xl:px-0 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
+        <p className="text-2xl font-medium work-sans leading-[44px] text-[#242628]">Good Morning<span className="text-[38px] font-medium work-sans">, Asif</span></p>
+        <p className="text-sans-400-16 text-[#3A3D3F] leading-[27px]">Here’s a quick overview of your performance. <br />
+        Let’s make today another successful day!</p>
+      </div>
+
+      <div className="grid grid-cols-12 gap-6 lg:mt-[100px] mt-[50px] mb-[160px] xl:px-0 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
         <div className="hidden lg:block col-span-3 border rounded-[20px] pb-[113px] shadow-md">
           <div className=" bg-[#EDEDED] rounded-t-[20px]">
             <div className="flex justify-center items-center gap-[10px] py-[34px]">
@@ -737,7 +751,7 @@ const Attorney_DashBoard = () => {
 
                 <p className="text-sans-500-16 mb-4">Next Appointment’s</p>
 
-                <div className="overflow-y-auto max-h-[200px]">
+                <div className="overflow-y-auto max-h-[200px] ">
                   <div className="flex flex-col gap-4 ">
                     {nextAppointment.map((singleAppointment, idx) => (
                       <Next_Apntmnrt_Single_AD
@@ -750,8 +764,16 @@ const Attorney_DashBoard = () => {
               </div>
 
               {/* Third inner div */}
-              <div className="xl:col-span-6 col-span-12 px-[17px] py-6 border rounded-[10px] shadow-lg">
+              <div className="xl:col-span-6 col-span-12 px-4 py-4 border rounded-[10px] shadow-lg h-[276px]">
                 <p className="text-sans-500-16 mb-[28px]">Message</p>
+
+                <div className="overflow-y-auto max-h-[200px] ">
+                  <div className="flex flex-col gap-4 ">
+                    {
+                       messages.map((message, idx) => <Message_single key={idx} message={message}/>)
+                    }
+                  </div>
+                </div>
               </div>
             </div>
           </div>
