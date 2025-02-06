@@ -13,67 +13,16 @@ import caseStatusDashboard2 from "../../../assets/casestatusDashboard2.png";
 import caseStatusDashboard3 from "../../../assets/casestatusDashboard3.png";
 import caseStatusDashboard4 from "../../../assets/casestatusDashboard4.png";
 import { useEffect, useState } from "react";
-// import { TfiLayoutSidebarLeft } from "react-icons/tfi";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
 
 import { Button, Drawer, Radio, Space } from "antd";
 
-// chart
-import React, { PureComponent } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+// apex chart
+import ApexCharts from "apexcharts";
+import Chart from "react-apexcharts";
+
 import { curveCardinal } from "d3-shape";
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
+
 // progress bar
 import { Flex, Progress } from "antd";
 import Clients_progress from "./Clients_progress";
@@ -83,6 +32,84 @@ import Message_single from "./Message_single";
 const cardinal = curveCardinal.tension(0.2);
 
 const Attorney_DashBoard = () => {
+  // area charts info starts
+  const series  = [
+    {
+      name: "STOCK ABC",
+      data: [
+        [1510704000000, 8000], // 15 Nov
+        [1510790400000, 8100], // 16 Nov
+        [1510876800000, 8300], // 17 Nov
+        [1510963200000, 8500], // 18 Nov
+        [1511049600000, 8600], // 19 Nov
+        [1511136000000, 8700], // 20 Nov
+        [1511222400000, 8800], // 21 Nov
+        [1511308800000, 8850], // 22 Nov
+        [1511395200000, 8900], // 23 Nov
+        [1511481600000, 9000], // 24 Nov
+        [1511568000000, 9100], // 25 Nov
+        [1511654400000, 9150], // 26 Nov
+        [1511740800000, 9200], // 27 Nov
+        [1511827200000, 9150], // 28 Nov
+        [1511913600000, 9100], // 29 Nov
+        [1512000000000, 9050], // 30 Nov
+        [1512086400000, 9000], // 01 Dec
+        [1512172800000, 9100], // 02 Dec
+        [1512259200000, 9300], // 03 Dec
+        [1512345600000, 9400], // 04 Dec
+        [1512432000000, 9500], // 05 Dec
+      ],
+    },
+  ];
+
+  const options = {
+    chart: {
+      type: "area",
+      height: 350,
+      zoom: {
+        enabled: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth", // Makes the line smooth
+      width: 3,
+      colors: ["#007BFF"], // Blue color
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        shadeIntensity: 0.3,
+        opacityFrom: 0.7,
+        opacityTo: 0.2,
+        stops: [0, 90, 100],
+      },
+    },
+    xaxis: {
+      type: "datetime",
+      labels: {
+        format: "dd MMM", // Date format like '15 Nov'
+      },
+    },
+    yaxis: {
+      opposite: false,
+      labels: {
+        formatter: (value) => value.toFixed(0), // Remove decimals
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd MMM yyyy",
+      },
+    },
+    legend: {
+      horizontalAlign: "left",
+    },
+  }
+   // area charts info ends
+
   let [active, setActive] = useState("Dashboard");
 
   let handleClick = (name) => {
@@ -699,40 +726,9 @@ const Attorney_DashBoard = () => {
               <div className="xl:col-span-6 col-span-12 px-[17px] py-6 border rounded-[10px] shadow-lg">
                 <p className="text-sans-500-16 mb-[28px]">Case Request level</p>
                 {/* charts starts */}
-                <div className="overflow-x-auto sm:overflow-x-hidden">
-                  <div className="min-w-[600px] sm:w-full">
-                    <ResponsiveContainer width="100%" height={188}>
-                      <AreaChart
-                        width={500}
-                        height={400}
-                        data={data}
-                        margin={{
-                          top: 10,
-                          right: 30,
-                          left: 0,
-                          bottom: 0,
-                        }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Area
-                          type="monotone"
-                          dataKey="uv"
-                          stroke="#8884d8"
-                          fill="#8884d8"
-                          fillOpacity={0.3}
-                        />
-                        <Area
-                          type={cardinal}
-                          dataKey="uv"
-                          stroke="#82ca9d"
-                          fill="#82ca9d"
-                          fillOpacity={0.3}
-                        />
-                      </AreaChart>
-                    </ResponsiveContainer>
+                <div className="overflow-x-auto sm:overflow-x-hidden ">
+                  <div className="min-w-[600px] sm:w-full ">
+                  <Chart options={options} series={series} type="area" height={188} />
                   </div>
                 </div>
               </div>
