@@ -18,13 +18,10 @@ import { RiMenuUnfold3Fill } from "react-icons/ri";
 import { Button, Drawer, Radio, Space } from "antd";
 
 // apex chart
-import ApexCharts from "apexcharts";
 import Chart from "react-apexcharts";
-
 import { curveCardinal } from "d3-shape";
 
 // progress bar
-import { Flex, Progress } from "antd";
 import Clients_progress from "./Clients_progress";
 import Next_Apntmnrt_Single_AD from "./Next_Apntmnrt_Single_AD";
 import Message_single from "./Message_single";
@@ -37,31 +34,16 @@ const Attorney_DashBoard = () => {
     {
       name: "STOCK ABC",
       data: [
-        [1510704000000, 8000], // 15 Nov
-        [1510790400000, 8100], // 16 Nov
-        [1510876800000, 8300], // 17 Nov
-        [1510963200000, 8500], // 18 Nov
-        [1511049600000, 8600], // 19 Nov
-        [1511136000000, 8700], // 20 Nov
-        [1511222400000, 8800], // 21 Nov
-        [1511308800000, 8850], // 22 Nov
-        [1511395200000, 8900], // 23 Nov
-        [1511481600000, 9000], // 24 Nov
-        [1511568000000, 9100], // 25 Nov
-        [1511654400000, 9150], // 26 Nov
-        [1511740800000, 9200], // 27 Nov
-        [1511827200000, 9150], // 28 Nov
-        [1511913600000, 9100], // 29 Nov
-        [1512000000000, 9050], // 30 Nov
-        [1512086400000, 9000], // 01 Dec
-        [1512172800000, 9100], // 02 Dec
-        [1512259200000, 9300], // 03 Dec
-        [1512345600000, 9400], // 04 Dec
-        [1512432000000, 9500], // 05 Dec
+        [1510704000000, 1], // 15 Nov
+        [1510790400000, 2], // 16 Nov
+        [1510876800000, 3], // 17 Nov
+        [1510963200000, 4], // 18 Nov
+        [1511049600000, 5], // 19 Nov
+        [1511136000000, 6], // 20 Nov
+        [1511222400000, 7], // 21 Nov
       ],
     },
   ];
-
   const options = {
     chart: {
       type: "area",
@@ -74,9 +56,9 @@ const Attorney_DashBoard = () => {
       enabled: false,
     },
     stroke: {
-      curve: "smooth", // Makes the line smooth
+      curve: "smooth", 
       width: 3,
-      colors: ["#007BFF"], // Blue color
+      colors: ["#007BFF"],
     },
     fill: {
       type: "gradient",
@@ -90,7 +72,7 @@ const Attorney_DashBoard = () => {
     xaxis: {
       type: "datetime",
       labels: {
-        format: "dd MMM", // Date format like '15 Nov'
+        format: "dd MMM", 
       },
     },
     yaxis: {
@@ -109,6 +91,38 @@ const Attorney_DashBoard = () => {
     },
   }
    // area charts info ends
+
+
+   // Pi chart starts
+   const options2 = {
+    chart: {
+      type: "radialBar",
+    },
+    plotOptions: {
+      radialBar: {
+        startAngle: -100,
+        endAngle: 100, 
+        hollow: {
+          size: "0%", // Adjusts the thickness of the bars
+        },
+        track: {
+          show: true,
+          background: "#eee",
+          strokeWidth: "100%",
+          margin: 15,
+        },
+        dataLabels: {
+          show: false,
+        },
+      },
+    },
+    colors: ["#F4A100", "#28A745", "#007BFF"],
+    labels: ["Apples", "Oranges", "Bananas"],
+  };
+
+  const series2 = [80, 60, 40];
+
+   // Pi chart Ends 
 
   let [active, setActive] = useState("Dashboard");
 
@@ -698,6 +712,9 @@ const Attorney_DashBoard = () => {
               {/* First inner div */}
               <div className="xl:col-span-3 sm:col-span-6 col-span-12 py-6 px-3 border rounded-[10px] shadow-lg">
                 <p className="text-sans-500-16">Case Overview</p>
+
+                <Chart options={options2} series={series2} type="radialBar" width="100%" height="100%" />
+
               </div>
 
               {/* Second inner div */}

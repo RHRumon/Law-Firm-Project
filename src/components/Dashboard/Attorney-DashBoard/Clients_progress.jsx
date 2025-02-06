@@ -7,7 +7,7 @@ const Clients_progress = ({ client }) => {
   let clientCases = caseNumber; 
   let totalCases = 6;
   let progressPercent = Math.ceil((clientCases / totalCases) * 100);
-  console.log("progress:", progressPercent);
+  // console.log("progress:", progressPercent);
 
   return (
     <div className="flex gap-[8px] items-center w-full">
