@@ -14,7 +14,8 @@ const Root = () => {
                   location.pathname.startsWith('/caseHistoryDetails') || 
                   location.pathname.startsWith('/userAppointmentDetails');
                   
-  let isAttorneyNavbar = location.pathname === "/attorneyDashboard";
+  let isAttorneyNavbar = location.pathname.startsWith('/attorneyDashboard')||
+                        location.pathname.startsWith('/caseRequestDetails');
 
   return (
     <div>

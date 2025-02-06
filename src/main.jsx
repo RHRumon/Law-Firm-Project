@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root/Root.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
 import Home from "./components/Home-Routes/Home.jsx";
-// import About from './components/About-Components/About_Route.jsx';
 import About_Route from "./components/About-Components/About_Route.jsx";
 import Service_Route from "./components/Service-Components/Service_Route.jsx";
 import Service_Details_Route from "./components/Service-2-Components/Service_Details_Route.jsx";
@@ -16,10 +15,10 @@ import TeamDetail_Routes from "./components/Team_Details/TeamDetail_Routes.jsx";
 import Team_Routes from "./components/Team/Team_Routes.jsx";
 import User_Dashboard from "./components/Dashboard/User-Dashboard/User_Dashboard.jsx";
 import User_Attorney_Dash from "./components/Dashboard/User-Attorney/User_Attorney_Dash.jsx";
-// import Case_History_UserDash from "./components/Dashboard/User-Case-History/Case_History_DetailsUserDash.jsx";
 import Case_History_DetailsUserDash from "./components/Dashboard/User-Case-History/Case_History_DetailsUserDash.jsx";
 import User_Appointment_Details from "./components/Dashboard/User-Appointment-Details/User_Appointment_Details.jsx";
 import Attorney_DashBoard from "./components/Dashboard/Attorney-DashBoard/Attorney_DashBoard.jsx";
+import Case_Request_Details_ATD from "./components/Dashboard/Attorney-DashBoard/Case-Request-Details-ATD/Case_Request_Details_ATD.jsx";
 
 const router = createBrowserRouter([
   {
@@ -84,9 +83,12 @@ const router = createBrowserRouter([
       },
       {
         path:"/attorneyDashboard",
-        element:<Attorney_DashBoard></Attorney_DashBoard>
+        element:<Attorney_DashBoard/>
+      },
+      {
+        path:"/caseRequestDetails",
+        element: <Case_Request_Details_ATD/>
       }
-
 
     ],
   },

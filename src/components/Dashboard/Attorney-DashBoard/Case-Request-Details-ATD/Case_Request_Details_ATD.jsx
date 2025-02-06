@@ -1,4 +1,3 @@
-import profileImage from "../../../assets/sidebar_image.png";
 import { MdOutlineDashboard } from "react-icons/md";
 import { GiClawHammer } from "react-icons/gi";
 import { MdHistory } from "react-icons/md";
@@ -10,33 +9,30 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
-
 import { Button, Drawer, Radio, Space } from "antd";
-import Attorny_Info from "./Attorny_Info";
-import Case_info from "./Case_info";
+import Client_Info_Single from "./Client_Info_Single";
+import Case_Information_Single from "./Case_Information_Single";
+// import Asif from "../../../../assets/Asif.png";
 
-const Case_History_DetailsUserDash = () => {
+const Case_Request_Details_ATD = () => {
   let [active, setActive] = useState("Dashboard");
-  let [attorniesInfo, setAttorniesInfo] = useState([]);
+  let [clientInfo, setClientInfo] = useState([]);
   let [caseInfo, setCaseInfo] = useState([]);
   let handleClick = (name) => {
     setActive(name);
   };
 
   useEffect(() => {
-    fetch("Attorney_info_Case_His_UD.json")
+    fetch("Case_Req_ClientInfo_ATD.json")
       .then((res) => res.json())
-      .then((data) => setAttorniesInfo(data));
+      .then((data) => setClientInfo(data));
   }, []);
 
   useEffect(() => {
-    fetch("Case_info_Case_His_UD.json")
+    fetch("Case_Req_CaseInfo_ATD.json")
       .then((res) => res.json())
       .then((data) => setCaseInfo(data));
   }, []);
-  // console.log(attorniesInfo);
-  console.log(caseInfo);
-  
 
   // sidebar
   const [open, setOpen] = useState(false);
@@ -76,11 +72,9 @@ const Case_History_DetailsUserDash = () => {
             <div className=" bg-[#EDEDED] rounded-t-[20px]">
               <div className="flex justify-center items-center gap-[10px] py-[34px]">
                 <div className="rounded-full p-[3px] border border-black">
-                  <img
-                    className="rounded-full"
-                    src={profileImage}
-                    alt="profile"
-                  />
+                  <img className="rounded-full" 
+                //   src={Asif}
+                   alt="profile" />
                 </div>
                 <div>
                   <h3 className="font-medium mb-[2px]">Martha Ulison</h3>
@@ -303,7 +297,7 @@ const Case_History_DetailsUserDash = () => {
               <div className="rounded-full p-[3px] border border-black">
                 <img
                   className="rounded-full"
-                  src={profileImage}
+                  //   src={profileImage}
                   alt="profile"
                 />
               </div>
@@ -507,25 +501,31 @@ const Case_History_DetailsUserDash = () => {
 
         <div className="lg:col-span-9 col-span-12 border rounded-[20px] shadow-lg xl:pb-0 pb-[20px]">
           <div className="flex justify-start border-b-2 md:py-[38px] py-[17px] big-mid:px-10 sm:px-8 px-[22px] ">
-            <h1 className="dashboard-title">Case History</h1>
+            <h1 className="dashboard-title">Case Request</h1>
           </div>
 
-          <div className="md:px-10 px-5 md:mt-10 mt-6 md:mb-[62px] ">
+          <div className="md:px-10 px-5 md:mt-10 mt-6 md:mb-[117px] mb-10">
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6 ">
               {/* 1 */}
               <div>
-                {attorniesInfo.map((attorney, idx) => (
-                  <Attorny_Info key={idx} attorney={attorney} />
-                ))}
+                {
+                    clientInfo.map((client,idx) => <Client_Info_Single key={idx} client={client}/>)
+                }
               </div>
               {/* 2 */}
               <div>
+                {/* {caseInfo.map((Case, idx) => (
+                  <Case_info key={idx} Case={Case} />
+                ))} */}
                 {
-                   caseInfo.map((Case, idx) => (
-                    <Case_info key={idx} Case={Case}/>
-                   ))
+                    caseInfo.map((Case,idx) => <Case_Information_Single key={idx} Case={Case}/>)
                 }
-              </div>               
+              </div>
+            </div>
+
+            <div className="flex gap-5 mt-[50px]">
+                <button className="sm:w-[130px] sm:h-14 w-[89px] h-11 text-sans-500 sm:text-lg text-base rounded-[8px] bg-[#EDEDED]">Decline</button>
+                <button className="sm:w-[130px] sm:h-14 w-[89px] h-11 text-sans-500 sm:text-lg text-base rounded-[8px] bg-[#C7A87D] text-white">Accept</button>
             </div>
           </div>
         </div>
@@ -534,4 +534,4 @@ const Case_History_DetailsUserDash = () => {
   );
 };
 
-export default Case_History_DetailsUserDash;
+export default Case_Request_Details_ATD;
