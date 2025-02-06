@@ -125,7 +125,7 @@ const Attorney_DashBoard = () => {
       .then((res) => res.json())
       .then((data) => setMessages(data));
   }, []);
-  
+
   return (
     <div className="max-w-[1320px] mx-auto w-full">
       {/* sidebar starts */}
@@ -372,9 +372,14 @@ const Attorney_DashBoard = () => {
       {/* sidebar ends */}
 
       <div className="sm:mt-[40px] sm:mb-[56px] mt-5 mb-7 xl:px-0 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
-        <p className="text-2xl font-medium work-sans leading-[44px] text-[#242628]">Good Morning<span className="text-[38px] font-medium work-sans">, Asif</span></p>
-        <p className="text-sans-400-16 text-[#3A3D3F] leading-[27px]">Here’s a quick overview of your performance. <br />
-        Let’s make today another successful day!</p>
+        <p className="text-2xl font-medium work-sans leading-[44px] text-[#242628]">
+          Good Morning
+          <span className="text-[38px] font-medium work-sans">, Asif</span>
+        </p>
+        <p className="text-sans-400-16 text-[#3A3D3F] leading-[27px]">
+          Here’s a quick overview of your performance. <br />
+          Let’s make today another successful day!
+        </p>
       </div>
 
       <div className="grid grid-cols-12 gap-6 lg:mt-[100px] mt-[50px] mb-[160px] xl:px-0 md:px-7 smaller:px-8 small:px-4 tiny:px-2">
@@ -693,39 +698,43 @@ const Attorney_DashBoard = () => {
               {/* Third inner div */}
               <div className="xl:col-span-6 col-span-12 px-[17px] py-6 border rounded-[10px] shadow-lg">
                 <p className="text-sans-500-16 mb-[28px]">Case Request level</p>
-                {/* charts start */}
-                <ResponsiveContainer width="100%" height={188}>
-                  <AreaChart
-                    width={500}
-                    height={400}
-                    data={data}
-                    margin={{
-                      top: 10,
-                      right: 30,
-                      left: 0,
-                      bottom: 0,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Area
-                      type="monotone"
-                      dataKey="uv"
-                      stroke="#8884d8"
-                      fill="#8884d8"
-                      fillOpacity={0.3}
-                    />
-                    <Area
-                      type={cardinal}
-                      dataKey="uv"
-                      stroke="#82ca9d"
-                      fill="#82ca9d"
-                      fillOpacity={0.3}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
+                {/* charts starts */}
+                <div className="overflow-x-auto sm:overflow-x-hidden">
+                  <div className="min-w-[600px] sm:w-full">
+                    <ResponsiveContainer width="100%" height={188}>
+                      <AreaChart
+                        width={500}
+                        height={400}
+                        data={data}
+                        margin={{
+                          top: 10,
+                          right: 30,
+                          left: 0,
+                          bottom: 0,
+                        }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area
+                          type="monotone"
+                          dataKey="uv"
+                          stroke="#8884d8"
+                          fill="#8884d8"
+                          fillOpacity={0.3}
+                        />
+                        <Area
+                          type={cardinal}
+                          dataKey="uv"
+                          stroke="#82ca9d"
+                          fill="#82ca9d"
+                          fillOpacity={0.3}
+                        />
+                      </AreaChart>
+                    </ResponsiveContainer>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -733,7 +742,6 @@ const Attorney_DashBoard = () => {
             <div className="mt-6 grid grid-cols-12 gap-6">
               {/* First inner div */}
               <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px]">
-
                 <p className="text-sans-500-16 mb-4">Clients</p>
 
                 <div className="overflow-y-auto max-h-[200px]">
@@ -743,12 +751,10 @@ const Attorney_DashBoard = () => {
                     ))}
                   </div>
                 </div>
-
               </div>
 
               {/* Second inner div */}
               <div className="xl:col-span-3 sm:col-span-6 col-span-12 border px-4 py-4 rounded-[10px] shadow-lg h-[276px]">
-
                 <p className="text-sans-500-16 mb-4">Next Appointment’s</p>
 
                 <div className="overflow-y-auto max-h-[200px] ">
@@ -769,9 +775,9 @@ const Attorney_DashBoard = () => {
 
                 <div className="overflow-y-auto max-h-[200px] ">
                   <div className="flex flex-col gap-4 ">
-                    {
-                       messages.map((message, idx) => <Message_single key={idx} message={message}/>)
-                    }
+                    {messages.map((message, idx) => (
+                      <Message_single key={idx} message={message} />
+                    ))}
                   </div>
                 </div>
               </div>
