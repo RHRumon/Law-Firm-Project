@@ -12,7 +12,7 @@ import { RiMenuUnfold3Fill } from "react-icons/ri";
 import { Button, Drawer, Radio, Space } from "antd";
 import Single_Client_Info_Booking from "./Single_Client_Info_Booking";
 import Single_CaseInfo_Booking from "./Single_CaseInfo_Booking";
-import Single_Booking from "./Single_Booking_And_Evidence";
+// import Single_Booking from "./Single_Booking_And_Evidence";
 import Single_Booking_And_Evidence from "./Single_Booking_And_Evidence";
 
 const Booking_Details_ATD = () => {
@@ -543,12 +543,10 @@ const Booking_Details_ATD = () => {
               </div>
             </div>
 
-            {/*  */}
+            {/*Booking Detail & Evidence */}
 
-            <div className="border border-purple-500 grid md:grid-cols-2 grid-cols-1 gap-4">
-              {bookingDetails_And_Evidence.map((bookEvid, index) => (
-                <Single_Booking_And_Evidence key={index} bookEvid={bookEvid} />
-              ))}
+            <div className="">
+              <Single_Booking_And_Evidence data={bookingDetails_And_Evidence} />
             </div>
 
             <div className="flex gap-5 mt-[50px]">
