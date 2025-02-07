@@ -2,7 +2,8 @@
     {
       "Case_Type": "Murder",
       "CaseShortDescription": "This divorce case concerns Party A and Party B, filed on grounds of reason. Primary matters include the division of assets, child custody, and alimony, with the objective of achieving an equitable resolution.",
-      "Related_Case_Document": ""
+      "Case_History":"This case involves the alleged murder of Victim's Name by Party A and Party B, focusing on evidence, motive, and legal proceedings to determine accountability.",
+      "Evidence": ""
     }
 ]
   

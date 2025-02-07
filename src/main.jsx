@@ -10,7 +10,6 @@ import Service_Route from "./components/Service-Components/Service_Route.jsx";
 import Service_Details_Route from "./components/Service-2-Components/Service_Details_Route.jsx";
 import Case_Study_Route from "./components/Case-Study-Component/Case_Study_Route.jsx";
 import Case_Study2_Route from "./components/Case-Study-2-Components/Case_Study2_Route.jsx";
-
 import TeamDetail_Routes from "./components/Team_Details/TeamDetail_Routes.jsx";
 import Team_Routes from "./components/Team/Team_Routes.jsx";
 import User_Dashboard from "./components/Dashboard/User-Dashboard/User_Dashboard.jsx";
@@ -19,6 +18,8 @@ import Case_History_DetailsUserDash from "./components/Dashboard/User-Case-Histo
 import User_Appointment_Details from "./components/Dashboard/User-Appointment-Details/User_Appointment_Details.jsx";
 import Attorney_DashBoard from "./components/Dashboard/Attorney-DashBoard/Attorney_DashBoard.jsx";
 import Case_Request_Details_ATD from "./components/Dashboard/Attorney-DashBoard/Case-Request-Details-ATD/Case_Request_Details_ATD.jsx";
+import Booking_Details_ATD from "./components/Dashboard/Attorney-DashBoard/Booking-Details/Booking_Details_ATD.jsx";
+import Clients_Details_ATD from "./components/Dashboard/Attorney-DashBoard/Clients-Details/Clients_Details_ATD.jsx";
 
 const router = createBrowserRouter([
   {
@@ -88,6 +89,14 @@ const router = createBrowserRouter([
       {
         path:"/caseRequestDetails",
         element: <Case_Request_Details_ATD/>
+      },
+      {
+        path:"/bookingDetails",
+        element: <Booking_Details_ATD/>
+      },
+      {
+         path:"/clientsDetail",
+         element: <Clients_Details_ATD/>
       }
 
     ],

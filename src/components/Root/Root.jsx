@@ -15,7 +15,10 @@ const Root = () => {
                   location.pathname.startsWith('/userAppointmentDetails');
                   
   let isAttorneyNavbar = location.pathname.startsWith('/attorneyDashboard')||
-                        location.pathname.startsWith('/caseRequestDetails');
+                        location.pathname.startsWith('/caseRequestDetails')||
+                        location.pathname.startsWith('/bookingDetails')||
+                        location.pathname.startsWith('/clientsDetail');
+                        
 
   return (
     <div>

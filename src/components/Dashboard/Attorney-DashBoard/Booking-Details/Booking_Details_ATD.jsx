@@ -10,28 +10,38 @@ import { HiOutlineLogout } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
 import { Button, Drawer, Radio, Space } from "antd";
-import Client_Info_Single from "./Client_Info_Single";
-import Case_Information_Single from "./Case_Information_Single";
-// import Asif from "../../../../assets/Asif.png";
+import Single_Client_Info_Booking from "./Single_Client_Info_Booking";
+import Single_CaseInfo_Booking from "./Single_CaseInfo_Booking";
+import Single_Booking from "./Single_Booking_And_Evidence";
+import Single_Booking_And_Evidence from "./Single_Booking_And_Evidence";
 
-const Case_Request_Details_ATD = () => {
+const Booking_Details_ATD = () => {
   let [active, setActive] = useState("Dashboard");
   let [clientInfo, setClientInfo] = useState([]);
   let [caseInfo, setCaseInfo] = useState([]);
+  let [bookingDetails_And_Evidence, setBookingDetails_And_Evidence] = useState(
+    []
+  );
   let handleClick = (name) => {
     setActive(name);
   };
 
   useEffect(() => {
-    fetch("Case_Req_ClientInfo_ATD.json")
+    fetch("Client_Info_Booking.json")
       .then((res) => res.json())
       .then((data) => setClientInfo(data));
   }, []);
 
   useEffect(() => {
-    fetch("Case_Req_CaseInfo_ATD.json")
+    fetch("Case_Info_Booking.json")
       .then((res) => res.json())
       .then((data) => setCaseInfo(data));
+  }, []);
+
+  useEffect(() => {
+    fetch("BookingDetail_&_Evidence.json")
+      .then((res) => res.json())
+      .then((data) => setBookingDetails_And_Evidence(data));
   }, []);
 
   // sidebar
@@ -72,9 +82,11 @@ const Case_Request_Details_ATD = () => {
             <div className=" bg-[#EDEDED] rounded-t-[20px]">
               <div className="flex justify-center items-center gap-[10px] py-[34px]">
                 <div className="rounded-full p-[3px] border border-black">
-                  <img className="rounded-full" 
-                //   src={Asif}
-                   alt="profile" />
+                  <img
+                    className="rounded-full"
+                    //   src={Asif}
+                    alt="profile"
+                  />
                 </div>
                 <div>
                   <h3 className="font-medium mb-[2px]">Martha Ulison</h3>
@@ -516,24 +528,36 @@ const Case_Request_Details_ATD = () => {
           </div>
 
           <div className="md:px-10 px-5 md:mt-10 mt-6 md:mb-[117px] mb-10">
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-6 ">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
               {/* 1 */}
               <div>
-                {
-                    clientInfo.map((client,idx) => <Client_Info_Single key={idx} client={client}/>)
-                }
+                {clientInfo.map((client, idx) => (
+                  <Single_Client_Info_Booking key={idx} client={client} />
+                ))}
               </div>
               {/* 2 */}
               <div>
-                {
-                    caseInfo.map((Case,idx) => <Case_Information_Single key={idx} Case={Case}/>)
-                }
+                {caseInfo.map((Case, idx) => (
+                  <Single_CaseInfo_Booking key={idx} Case={Case} />
+                ))}
               </div>
             </div>
 
+            {/*  */}
+
+            <div className="border border-purple-500 grid md:grid-cols-2 grid-cols-1 gap-4">
+              {bookingDetails_And_Evidence.map((bookEvid, index) => (
+                <Single_Booking_And_Evidence key={index} bookEvid={bookEvid} />
+              ))}
+            </div>
+
             <div className="flex gap-5 mt-[50px]">
-                <button className="sm:w-[130px] sm:h-14 w-[89px] h-11 text-sans-500 sm:text-lg text-base rounded-[8px] bg-[#EDEDED]">Decline</button>
-                <button className="sm:w-[130px] sm:h-14 w-[89px] h-11 text-sans-500 sm:text-lg text-base rounded-[8px] bg-[#C7A87D] text-white">Accept</button>
+              <button className="sm:w-[150px] sm:h-14 w-[89px] h-11 textpurple-500 sm:text-lg text-sm rounded-[8px] bg-[#EDEDED] whitespace-nowrap">
+                Complete
+              </button>
+              <button className="md:w-[219px] sm:h-14 sm:w-[191px] w-[146px] h-11 textpurple-500 sm:text-lg text-sm rounded-[8px] bg-[#C7A87D] text-white whitespace-nowrap px-8 flex justify-center items-center">
+                Send Me Request
+              </button>
             </div>
           </div>
         </div>
@@ -542,4 +566,4 @@ const Case_Request_Details_ATD = () => {
   );
 };
 
-export default Case_Request_Details_ATD;
+export default Booking_Details_ATD;

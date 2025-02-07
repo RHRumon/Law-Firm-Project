@@ -1,0 +1,36 @@
+[
+    {
+      "section1": "Booking Details",
+      "details": {
+        "Date": "24 December 2024",
+        "Time_Slot": "02:00 PM",
+        "Create_Date": "23 December 2024"
+      }
+    },
+    {
+      "section2": "Evidence",
+      "files": [
+        {
+          "id": 1,
+          "type": "pdf",
+          "label": "Download Pdf"
+        },
+        {
+          "id": 2,
+          "type": "pdf",
+          "label": "Download Pdf"
+        },
+        {
+          "id": 3,
+          "type": "mp4",
+          "label": "Download mp4"
+        },
+        {
+          "id": 4,
+          "type": "jpg",
+          "label": "Download jpg"
+        }
+      ]
+    }
+  ]
+  
