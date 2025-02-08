@@ -854,8 +854,8 @@ const Attorney_DashBoard = () => {
                       alt=""
                     />
                     <div className="flex flex-col sm:gap-3 gap-1">
-                      <p>Alina Gain</p>
-                      <p>alinagain@gmail.com</p>
+                      <p className="work-sans font-semibold text-lg">Alina Gain</p>
+                      <p className="text-sans-400-16 text-[#818B8F]">alinagain@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex flex-col gap-3">
