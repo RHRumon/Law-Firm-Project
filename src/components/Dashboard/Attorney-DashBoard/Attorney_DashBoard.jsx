@@ -14,8 +14,9 @@ import caseStatusDashboard3 from "../../../assets/casestatusDashboard3.png";
 import caseStatusDashboard4 from "../../../assets/casestatusDashboard4.png";
 import { useEffect, useState } from "react";
 import { RiMenuUnfold3Fill } from "react-icons/ri";
-
 import { Button, Drawer, Radio, Space } from "antd";
+import { Modal } from "antd";
+import modalPic from "../../../assets/modal_pic.png";
 
 // apex chart
 import Chart from "react-apexcharts";
@@ -30,7 +31,7 @@ const cardinal = curveCardinal.tension(0.2);
 
 const Attorney_DashBoard = () => {
   // area charts info starts
-  const series  = [
+  const series = [
     {
       name: "STOCK ABC",
       data: [
@@ -56,7 +57,7 @@ const Attorney_DashBoard = () => {
       enabled: false,
     },
     stroke: {
-      curve: "smooth", 
+      curve: "smooth",
       width: 3,
       colors: ["#007BFF"],
     },
@@ -72,7 +73,7 @@ const Attorney_DashBoard = () => {
     xaxis: {
       type: "datetime",
       labels: {
-        format: "dd MMM", 
+        format: "dd MMM",
       },
     },
     yaxis: {
@@ -89,19 +90,18 @@ const Attorney_DashBoard = () => {
     legend: {
       horizontalAlign: "left",
     },
-  }
-   // area charts info ends
+  };
+  // area charts info ends
 
-
-   // Pi chart starts
-   const options2 = {
+  // Pi chart function starts
+  const options2 = {
     chart: {
       type: "radialBar",
     },
     plotOptions: {
       radialBar: {
         startAngle: -100,
-        endAngle: 100, 
+        endAngle: 100,
         hollow: {
           size: "0%", // Adjusts the thickness of the bars
         },
@@ -119,10 +119,23 @@ const Attorney_DashBoard = () => {
     colors: ["#F4A100", "#28A745", "#007BFF"],
     labels: ["Apples", "Oranges", "Bananas"],
   };
+  // Pi chart function ends
 
+  // modal starts
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+  // modal ends
   const series2 = [80, 60, 40];
 
-   // Pi chart Ends 
+  // Pi chart Ends
 
   let [active, setActive] = useState("Dashboard");
 
@@ -713,8 +726,13 @@ const Attorney_DashBoard = () => {
               <div className="xl:col-span-3 sm:col-span-6 col-span-12 py-6 px-3 border rounded-[10px] shadow-lg">
                 <p className="text-sans-500-16">Case Overview</p>
 
-                <Chart options={options2} series={series2} type="radialBar" width="100%" height="100%" />
-
+                <Chart
+                  options={options2}
+                  series={series2}
+                  type="radialBar"
+                  width="100%"
+                  height="100%"
+                />
               </div>
 
               {/* Second inner div */}
@@ -745,7 +763,12 @@ const Attorney_DashBoard = () => {
                 {/* charts starts */}
                 <div className="overflow-x-auto sm:overflow-x-hidden ">
                   <div className="min-w-[600px] sm:w-full ">
-                  <Chart options={options} series={series} type="area" height={188} />
+                    <Chart
+                      options={options}
+                      series={series}
+                      type="area"
+                      height={188}
+                    />
                   </div>
                 </div>
               </div>
@@ -797,6 +820,69 @@ const Attorney_DashBoard = () => {
             </div>
           </div>
         </div>
+
+        {/* modal Appoinment starts */}
+        <div>
+          <Button type="primary" onClick={showModal}>
+            Open Modal
+          </Button>
+          <Modal
+            // title="Basic Modal"
+            open={isModalOpen}
+            onOk={handleOk}
+            // width={489}
+            // height={638}
+            // Style={{ height: "638px", overflow: "auto" }}
+            footer={null}
+            onCancel={handleCancel}
+          >
+            <div className="max-w-[489px] min-h-[638px] text-[#242628]">
+              <div className="text-center pt-[21px] md:mb-10 mb-5">
+                <h1 className="font-medium text-2xl eb-garamond mb-6">
+                  Appointment Time Is Complete
+                </h1>
+                <p className="eb-garamond font-medium text-lg">
+                  Now You Can Receive Case Request
+                </p>
+              </div>
+              <div className="md:px-24 sm:px-11 px-0">
+                <div className="border border-[#E0E0E0] rounded-[10px] px-6 py-8 h-[324px] md:mb-10 mb-5">
+                  <div className="flex items-center gap-3 mb-6">
+                    <img
+                      className="sm:h-[70px] sm:w-[70px] h-[50px] w-[50px]"
+                      src={modalPic}
+                      alt=""
+                    />
+                    <div className="flex flex-col sm:gap-3 gap-1">
+                      <p>Alina Gain</p>
+                      <p>alinagain@gmail.com</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <p className="text-sans-500-16">
+                      <span
+                        className="text-[#818B8F]">Case Type:
+                      </span>{" "}
+                      Murder
+                    </p>
+                    <p className="text-sans-500-16">
+                      <span
+                        className="text-[#818B8F]">Case Description:
+                      </span>{" "}
+                      This case involves Party A and Party B, concerning the alleged murder of Victim's Name. 
+                    </p>
+                  </div>
+                </div>
+                
+              </div>
+              <div className="md:px-10 flex sm:flex-row flex-col sm:justify-center justify-start gap-4">
+                  <button className="sm:w-[174px] sm:h-[56px] w-[125px] h-[37px] border text-sans-500 sm:text-lg text-sm rounded-[8px] bg-[#EDEDED] hover:bg-[#C7A87D] hover:text-white">View Details</button>
+                  <button className="sm:w-[219px] sm:h-[56px] w-[188px] h-[37px] border text-sans-500 sm:text-lg text-sm rounded-[8px] bg-[#EDEDED] hover:bg-[#C7A87D] hover:text-white">Send Me Request</button>
+              </div>
+            </div>
+          </Modal>
+        </div>
+        {/* modal Appoinment ends */}
       </div>
     </div>
   );
